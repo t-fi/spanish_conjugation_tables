@@ -2,9 +2,10 @@
 
 Conjugation tables for Latin American Spanish (no `vosotros`), usable both online and directly in a local browser.
 
-[Website](https://t-fi.github.io/spanish_conjugation_tables/) · [Regular endings](spanish-conjugation-chart.html) · [Irregular families](spanish-irregular-verbs/index.html)
+[Website](https://t-fi.github.io/spanish_conjugation_tables/) · [Regular endings](spanish-conjugation-chart.html) · [Core patterns](spanish-conjugation-cores.html) · [Irregular families](spanish-irregular-verbs/index.html)
 
 - `spanish-conjugation-chart.html` — regular endings chart
+- `spanish-conjugation-cores.html` — compact repeated-core overview without person rows
 - `spanish-irregular-verbs/index.html` — irregular-family atlas
 - `spanish-irregular-verbs/generate.py` — deterministic atlas generator
 - `spanish-irregular-verbs/verify.py` — structural and linguistic checks

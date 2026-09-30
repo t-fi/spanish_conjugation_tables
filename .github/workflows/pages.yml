@@ -25,7 +25,7 @@ jobs:
       - name: Collect static pages
         run: |
           mkdir -p _site/spanish-irregular-verbs
-          cp index.html spanish-conjugation-chart.html .nojekyll _site/
+          cp index.html spanish-conjugation-chart.html spanish-conjugation-cores.html .nojekyll _site/
           cp spanish-irregular-verbs/*.html _site/spanish-irregular-verbs/
       - name: Upload Pages artifact
         if: github.event_name != 'pull_request'

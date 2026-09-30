@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Resumen de los núcleos repetidos de la conjugación regular, sin filas por persona. Raíz e infinitivo completo claramente diferenciados.">
+  <title>Núcleos regulares del español</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #172033;
+      --muted: #5c677d;
+      --line: #cbd3df;
+      --group-line: #52627b;
+      --present: #e7f5ee;
+      --present-strong: #badfcb;
+      --present-accent: #0b7a4e;
+      --preterite: #eaf0fb;
+      --preterite-strong: #c5d4ee;
+      --preterite-accent: #176fb3;
+      --imperfect: #fff1df;
+      --imperfect-strong: #efd0a8;
+      --imperfect-accent: #9a5d16;
+      --future: #eeeafd;
+      --future-strong: #d4c9f4;
+      --future-accent: #685bc5;
+      --conditional: #f8e9f2;
+      --conditional-strong: #e9c5d9;
+      --conditional-accent: #a34e75;
+      --subjunctive: #f3eafb;
+      --subjunctive-strong: #dfc8ef;
+      --subjunctive-accent: #8d4fb0;
+      --affirmative: #e5f4eb;
+      --affirmative-strong: #bddfc9;
+      --affirmative-accent: #0b7a49;
+      --nonfinite: #f0f2f5;
+      --nonfinite-strong: #d7dce3;
+      --nonfinite-accent: #4d586a;
+      --rare: #f3f1ed;
+      --rare-strong: #ded8cf;
+      --rare-accent: #80664c;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: clamp(.5rem, 2vw, 1.5rem); color: var(--ink); background: #f3f6fa; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    main { width: min(100%, 1280px); margin-inline: auto; padding: clamp(.75rem, 1.8vw, 1.4rem); background: white; border: 1px solid #e1e6ee; border-radius: 14px; box-shadow: 0 12px 34px rgb(24 39 75 / 9%); }
+    .page-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: .4rem 1rem; }
+    h1 { margin: 0; font-size: 1.2rem; letter-spacing: -.025em; }
+    h2 { margin: 0; font-size: 1rem; letter-spacing: -.015em; }
+    nav { display: flex; flex-wrap: wrap; gap: .4rem 1rem; font-size: .75rem; }
+    a { color: #355c91; text-underline-offset: .15em; }
+    a:focus-visible, .table-wrap:focus-visible { outline: 3px solid #176fb3; outline-offset: 3px; }
+    .guide { margin: .5rem 0 0; color: var(--muted); font-size: .78rem; line-height: 1.45; }
+    .guide strong { color: var(--ink); }
+    section { margin-top: 1rem; }
+    .section-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .3rem .8rem; margin-bottom: .4rem; }
+    .formula { margin: 0; color: var(--muted); font-size: .73rem; }
+    .table-wrap { position: relative; width: 100%; overflow-x: auto; border-radius: 8px; scrollbar-color: #9ba7b8 transparent; }
+    table { width: 100%; border-collapse: collapse; table-layout: auto; }
+    th, td { padding: .42rem .65rem; border: 1px solid var(--line); }
+    thead th { font-size: .78rem; font-weight: 760; text-align: center; }
+    thead .base { font-size: .69rem; color: #46536a; }
+    thead .infinitive-base { color: var(--ink); font-weight: 800; }
+    .class-head, tbody th { position: sticky; left: 0; z-index: 1; width: 94px; min-width: 94px; background: #eef2f7; white-space: nowrap; text-align: left; font-size: .76rem; }
+    .class-head { z-index: 2; background: #e8edf4; }
+    tbody td { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: .91rem; font-weight: 650; text-align: left; white-space: nowrap; }
+    .pattern { color: var(--accent, var(--ink)); font-weight: 800; text-decoration-line: underline; text-decoration-thickness: .12em; text-underline-offset: .16em; text-decoration-skip-ink: none; }
+    .group-start { border-left: 3px solid var(--group-line); }
+    .present { --accent: var(--present-accent); background: var(--present); }
+    .present.strong { background: var(--present-strong); }
+    .preterite { --accent: var(--preterite-accent); background: var(--preterite); }
+    .preterite.strong { background: var(--preterite-strong); }
+    .imperfect { --accent: var(--imperfect-accent); background: var(--imperfect); }
+    .imperfect.strong { background: var(--imperfect-strong); }
+    .future { --accent: var(--future-accent); background: var(--future); }
+    .future.strong { background: var(--future-strong); }
+    .conditional { --accent: var(--conditional-accent); background: var(--conditional); }
+    .conditional.strong { background: var(--conditional-strong); }
+    .subjunctive { --accent: var(--subjunctive-accent); background: var(--subjunctive); }
+    .subjunctive.strong { background: var(--subjunctive-strong); }
+    .compound-ind { background: #bdd9e7; }
+    .affirmative { --accent: var(--affirmative-accent); background: var(--affirmative); }
+    .affirmative.strong { background: var(--affirmative-strong); }
+    .nonfinite { --accent: var(--nonfinite-accent); background: var(--nonfinite); }
+    .nonfinite.strong { background: var(--nonfinite-strong); }
+    .rare { --accent: var(--rare-accent); background: var(--rare); }
+    .rare.strong { background: var(--rare-strong); }
+    .indicative-table { min-width: 650px; }
+    .subjunctive-table { min-width: 480px; }
+    .compound-table { min-width: 1050px; }
+    .extra-table { min-width: 500px; }
+    .rare-table { min-width: 630px; }
+    .no-core { display: block; margin-top: .2rem; color: var(--muted); font: 500 .69rem/1.2 ui-sans-serif, system-ui, sans-serif; }
+    .note { margin: .35rem 0 0; color: var(--muted); font-size: .72rem; line-height: 1.4; }
+    .comparison { margin: .35rem 0 0; font-size: .75rem; }
+    .comparison span { display: inline-block; padding: .18rem .35rem; border-radius: 3px; }
+    .rare-section { padding-top: .8rem; border-top: 1px dashed var(--line); }
+    .rare-section h2 { color: #5f5b54; }
+    @media print {
+      @page { size: landscape; margin: 10mm; }
+      * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      body { padding: 0; background: white; }
+      main { width: 100%; padding: 0; border: 0; box-shadow: none; }
+      nav { display: none; }
+      section { break-inside: avoid; }
+      .table-wrap { overflow: visible; }
+      table { min-width: 0 !important; }
+      th, td { padding: .3rem .4rem; }
+      tbody td { font-size: .8rem; }
+      .class-head, tbody th { position: static; min-width: 0; width: auto; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="page-head">
+        <h1>Núcleos regulares</h1>
+        <nav aria-label="Otros cuadros"><a href="index.html">Índice</a><a href="spanish-conjugation-chart.html">Cuadro completo →</a></nav>
+      </div>
+      <p class="guide"><strong>Raíz</strong> = infinitivo sin -ar / -er / -ir. <strong>Infinitivo completo</strong> = conserva -ar / -er / -ir.<br>Solo núcleos repetidos, no formas completas. El cuadro completo muestra las terminaciones y las tildes de cada persona.</p>
+    </header>
+
+    <section id="indicativo">
+      <div class="section-head"><h2>Indicativo · tiempos simples</h2><p class="formula"><span class="pattern">Subrayado</span> = núcleo · color = tiempo</p></div>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Núcleos del indicativo; tabla desplazable">
+        <table class="indicative-table" aria-label="Núcleos regulares del indicativo">
+          <thead>
+            <tr>
+              <th class="class-head" rowspan="2" scope="col">Clase</th>
+              <th class="present strong" scope="col">Presente</th>
+              <th class="preterite strong group-start" scope="col">Pretérito</th>
+              <th class="imperfect strong group-start" scope="col">Imperfecto</th>
+              <th class="future strong group-start" scope="col">Futuro</th>
+              <th class="conditional strong group-start" scope="col">Condicional</th>
+            </tr>
+            <tr>
+              <th class="present base" scope="col">raíz +</th>
+              <th class="preterite base group-start" scope="col">raíz +</th>
+              <th class="imperfect base group-start" scope="col">raíz +</th>
+              <th class="future base infinitive-base group-start" scope="col">infinitivo completo +</th>
+              <th class="conditional base infinitive-base group-start" scope="col">infinitivo completo +</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">-AR</th>
+              <td class="present">-<span class="pattern">a</span></td>
+              <td class="preterite group-start">-<span class="pattern">a</span></td>
+              <td class="imperfect group-start">-<span class="pattern">aba</span></td>
+              <td class="future group-start" rowspan="3">—<span class="no-core">sin núcleo único</span></td>
+              <td class="conditional group-start" rowspan="3">-<span class="pattern">ía</span></td>
+            </tr>
+            <tr>
+              <th scope="row">-ER</th>
+              <td class="present">-<span class="pattern">e</span></td>
+              <td class="preterite group-start" rowspan="2">-<span class="pattern">i</span></td>
+              <td class="imperfect group-start" rowspan="2">-<span class="pattern">ía</span></td>
+            </tr>
+            <tr>
+              <th scope="row">-IR</th>
+              <td class="present">-<span class="pattern">e / i</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="comparison"><span class="imperfect">Imperfecto (-ER / -IR): <strong>raíz + ía</strong></span> · <span class="conditional">Condicional: <strong>infinitivo + ía</strong></span></p>
+      <p class="note">Presente y pretérito: el núcleo no aparece en todas las terminaciones. Futuro: añade la terminación personal al infinitivo; consulta el <a href="spanish-conjugation-chart.html#indicativo">cuadro completo</a>.</p>
+    </section>
+
+    <section id="subjuntivo">
+      <div class="section-head"><h2>Subjuntivo · tiempos simples</h2><p class="formula">raíz + núcleo</p></div>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Núcleos del subjuntivo; tabla desplazable">
+        <table class="subjunctive-table" aria-label="Núcleos regulares del subjuntivo">
+          <thead><tr><th class="class-head" scope="col">Clase</th><th class="subjunctive strong" scope="col">Presente</th><th class="subjunctive strong group-start" scope="col">Imperfecto · -ra</th><th class="subjunctive strong group-start" scope="col">Imperfecto · -se</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">-AR</th><td class="subjunctive">-<span class="pattern">e</span></td><td class="subjunctive group-start">-<span class="pattern">ara</span></td><td class="subjunctive group-start">-<span class="pattern">ase</span></td></tr>
+            <tr><th scope="row">-ER / -IR</th><td class="subjunctive">-<span class="pattern">a</span></td><td class="subjunctive group-start">-<span class="pattern">iera</span></td><td class="subjunctive group-start">-<span class="pattern">iese</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="compuestos">
+      <div class="section-head"><h2>Tiempos compuestos</h2><p class="formula">haber + participio: raíz + -ado (-AR) / -ido (-ER, -IR)</p></div>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Núcleos del auxiliar haber; tabla desplazable">
+        <table class="compound-table" aria-label="Núcleos del auxiliar haber para los tiempos compuestos">
+          <thead>
+            <tr><th class="class-head" rowspan="2" scope="col">Auxiliar</th><th class="compound-ind" colspan="4" scope="colgroup">Indicativo</th><th class="subjunctive strong group-start" colspan="3" scope="colgroup">Subjuntivo</th></tr>
+            <tr><th class="present" scope="col">Pretérito perfecto</th><th class="imperfect" scope="col">Pluscuamperfecto</th><th class="future" scope="col">Futuro perfecto</th><th class="conditional" scope="col">Condicional perfecto</th><th class="subjunctive group-start" scope="col">Pretérito perfecto</th><th class="subjunctive" scope="col">Pluscuamperfecto · -ra</th><th class="subjunctive" scope="col">Pluscuamperfecto · -se</th></tr>
+          </thead>
+          <tbody><tr><th scope="row">haber</th><td class="present"><span class="pattern">he / ha</span></td><td class="imperfect"><span class="pattern">había</span></td><td class="future"><span class="pattern">habré / habrá / habre</span></td><td class="conditional"><span class="pattern">habría</span></td><td class="subjunctive group-start"><span class="pattern">haya</span></td><td class="subjunctive"><span class="pattern">hubiera</span></td><td class="subjunctive"><span class="pattern">hubiese</span></td></tr></tbody>
+        </table>
+      </div>
+      <p class="note">Los núcleos son del auxiliar irregular <strong>haber</strong>; el participio del verbo regular no cambia con la persona.</p>
+    </section>
+
+    <section id="otras-formas">
+      <div class="section-head"><h2>Imperativo y formas no personales</h2><p class="formula">raíz +</p></div>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Imperativo y formas no personales; tabla desplazable">
+        <table class="extra-table" aria-label="Núcleos del imperativo y terminaciones no personales">
+          <thead><tr><th class="class-head" scope="col">Clase</th><th class="affirmative strong" scope="col">Imperativo afirmativo</th><th class="nonfinite strong group-start" scope="col">Gerundio</th><th class="nonfinite strong" scope="col">Participio</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">-AR</th><td class="affirmative">-<span class="pattern">a / e</span></td><td class="nonfinite group-start">-<span class="pattern">a</span>ndo</td><td class="nonfinite">-<span class="pattern">a</span>do</td></tr>
+            <tr><th scope="row">-ER / -IR</th><td class="affirmative">-<span class="pattern">e / a</span></td><td class="nonfinite group-start">-<span class="pattern">i</span>endo</td><td class="nonfinite">-<span class="pattern">i</span>do</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">Imperativo (sin voseo): el núcleo depende del tratamiento; <strong>negativo = no + presente de subjuntivo</strong>. Formas no personales compuestas: <strong>haber / habiendo + participio</strong>.</p>
+    </section>
+
+    <section class="rare-section" id="formas-raras">
+      <div class="section-head"><h2>Formas raras o históricas</h2><p class="formula">Se mantienen aparte de los tiempos de uso cotidiano.</p></div>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Núcleos de formas raras; tabla desplazable">
+        <table class="rare-table" aria-label="Núcleos regulares y del auxiliar haber en formas raras">
+          <thead>
+            <tr><th class="class-head" rowspan="2" scope="col">Clase</th><th class="rare strong" scope="col">Pretérito anterior · indicativo</th><th class="rare strong group-start" scope="col">Futuro · subjuntivo</th><th class="rare strong group-start" scope="col">Futuro perfecto · subjuntivo</th></tr>
+            <tr><th class="rare base" scope="col">haber + participio</th><th class="rare base group-start" scope="col">raíz +</th><th class="rare base group-start" scope="col">haber + participio</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">-AR</th><td class="rare" rowspan="2"><span class="pattern">hube / hubi / hubo / hubie</span></td><td class="rare group-start">-<span class="pattern">are</span></td><td class="rare group-start" rowspan="2"><span class="pattern">hubiere</span></td></tr>
+            <tr><th scope="row">-ER / -IR</th><td class="rare group-start">-<span class="pattern">iere</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
