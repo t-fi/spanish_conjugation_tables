@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Conjugación completa de yacer dentro de la familia irregular de yacer">
+  <title>yacer · conjugación irregular</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #172033;
+      --muted: #5c677d;
+      --line: #cbd3df;
+      --group-line: #52627b;
+      --paper: #ffffff;
+      --page: #f3f6fa;
+      --row: #f7f9fc;
+      --row-alt: #eef2f7;
+
+      --present: #e7f5ee;
+      --present-strong: #badfcb;
+      --present-accent: #0b7a4e;
+      --preterite: #eaf0fb;
+      --preterite-strong: #c5d4ee;
+      --preterite-accent: #176fb3;
+      --imperfect: #fff1df;
+      --imperfect-strong: #efd0a8;
+      --imperfect-accent: #9a5d16;
+      --future: #eeeafd;
+      --future-strong: #d4c9f4;
+      --future-accent: #685bc5;
+      --conditional: #f8e9f2;
+      --conditional-strong: #e9c5d9;
+      --conditional-accent: #a34e75;
+
+      --subjunctive: #f3eafb;
+      --subjunctive-strong: #dfc8ef;
+      --subjunctive-accent: #8d4fb0;
+      --compound-ind: #e5f1f7;
+      --compound-ind-strong: #bdd9e7;
+      --compound-ind-accent: #28728f;
+      --compound-sub: #f3eafb;
+      --compound-sub-strong: #dfc8ef;
+      --affirmative: #e5f4eb;
+      --affirmative-strong: #bddfc9;
+      --affirmative-accent: #0b7a49;
+      --nonfinite: #f0f2f5;
+      --nonfinite-strong: #d7dce3;
+      --nonfinite-accent: #4d586a;
+      --rare: #f3f1ed;
+      --rare-strong: #ded8cf;
+      --rare-accent: #80664c;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: clamp(0.5rem, 2vw, 1.5rem);
+      background: var(--page);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+    }
+
+    main {
+      width: min(100%, 1440px);
+      margin-inline: auto;
+      padding: clamp(0.75rem, 1.8vw, 1.4rem);
+      background: var(--paper);
+      border: 1px solid #e1e6ee;
+      border-radius: 14px;
+      box-shadow: 0 12px 34px rgb(24 39 75 / 9%);
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(1.02rem, 1.6vw, 1.22rem);
+      line-height: 1.2;
+      letter-spacing: -0.015em;
+    }
+
+    section {
+      margin-top: clamp(1.05rem, 2vw, 1.6rem);
+      scroll-margin-top: 1rem;
+    }
+
+    main > section:first-of-type { margin-top: 0; }
+
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.65rem;
+      margin-bottom: 0.48rem;
+    }
+
+    .formula {
+      margin: 0;
+      color: var(--muted);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.75rem;
+      font-weight: 650;
+      text-align: right;
+    }
+
+    .table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      border-radius: 8px;
+      scrollbar-color: #9ba7b8 transparent;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .indicative-table { min-width: 1020px; }
+    .subjunctive-table { min-width: 790px; }
+    .compound-table { min-width: 1080px; }
+    .command-table { min-width: 420px; }
+    .nonfinite-table { min-width: 520px; }
+    .rare-table { min-width: 710px; }
+
+    th,
+    td {
+      padding: 0.44rem 0.52rem;
+      border: 1px solid var(--line);
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    thead th {
+      font-weight: 760;
+      letter-spacing: 0.005em;
+      white-space: normal;
+    }
+
+    thead tr:first-child th {
+      padding-block: 0.55rem;
+      font-size: 0.92rem;
+    }
+
+    thead tr:nth-child(2) th {
+      color: #46536a;
+      font-size: 0.74rem;
+      line-height: 1.2;
+    }
+
+    tbody th {
+      position: sticky;
+      left: 0;
+      z-index: 1;
+      background: var(--row);
+      text-align: left;
+      font-size: 0.82rem;
+      box-shadow: 2px 0 0 rgb(82 98 123 / 10%);
+    }
+
+    tbody tr:nth-child(even) th { background: var(--row-alt); }
+
+    tbody td {
+      padding-left: 0.7rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.88rem;
+      font-weight: 650;
+      text-align: left;
+    }
+
+    .pattern {
+      color: var(--accent, var(--ink));
+      font-weight: 800;
+      text-decoration-line: underline;
+      text-decoration-thickness: 0.12em;
+      text-underline-offset: 0.16em;
+      text-decoration-skip-ink: none;
+    }
+
+    .shift-accent { color: var(--ink); }
+
+    .stem-key {
+      display: block;
+      margin-top: 0.15rem;
+      color: var(--accent, #34425a);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.67rem;
+      font-weight: 750;
+      line-height: 1.1;
+    }
+
+    .person {
+      position: sticky;
+      left: 0;
+      z-index: 3;
+      min-width: 135px;
+      background: #e8edf4;
+      box-shadow: 2px 0 0 rgb(82 98 123 / 12%);
+    }
+
+    .indicative-table,
+    .compound-table {
+      table-layout: fixed;
+    }
+
+    .indicative-table .person,
+    .compound-table .person {
+      width: 150px;
+    }
+
+    .group-start { border-left: 3px solid var(--group-line); }
+
+    .present { --accent: var(--present-accent); background: var(--present); }
+    .present.strong { background: var(--present-strong); }
+    .preterite { --accent: var(--preterite-accent); background: var(--preterite); }
+    .preterite.strong { background: var(--preterite-strong); }
+    .imperfect { --accent: var(--imperfect-accent); background: var(--imperfect); }
+    .imperfect.strong { background: var(--imperfect-strong); }
+    .future { --accent: var(--future-accent); background: var(--future); }
+    .future.strong { background: var(--future-strong); }
+    .conditional { --accent: var(--conditional-accent); background: var(--conditional); }
+    .conditional.strong { background: var(--conditional-strong); }
+
+    .subjunctive { --accent: var(--subjunctive-accent); background: var(--subjunctive); }
+    .subjunctive.strong { background: var(--subjunctive-strong); }
+    .compound-ind { --accent: var(--compound-ind-accent); background: var(--compound-ind); }
+    .compound-ind.strong { background: var(--compound-ind-strong); }
+    .compound-sub { --accent: var(--subjunctive-accent); background: var(--compound-sub); }
+    .compound-sub.strong { background: var(--compound-sub-strong); }
+    .affirmative { --accent: var(--affirmative-accent); background: var(--affirmative); }
+    .affirmative.strong { background: var(--affirmative-strong); }
+    .nonfinite { --accent: var(--nonfinite-accent); background: var(--nonfinite); }
+    .nonfinite.strong { background: var(--nonfinite-strong); }
+    .rare { --accent: var(--rare-accent); background: var(--rare); }
+    .rare.strong { background: var(--rare-strong); }
+
+    .legend { --accent: var(--group-line); }
+
+    .paired-tables {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+      gap: 0.8rem;
+      align-items: start;
+    }
+
+    .table-card { min-width: 0; }
+
+    .table-card h2 { margin-bottom: 0.48rem; }
+
+    .command-table .person { min-width: 108px; }
+
+    .nonfinite-table .person { min-width: 155px; }
+
+    .command-rule {
+      --accent: var(--subjunctive-accent);
+      margin: 0.38rem 0 0;
+      padding: 0.38rem 0.55rem;
+      border-left: 3px solid var(--subjunctive-accent);
+      background: var(--subjunctive);
+      color: #44345f;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.73rem;
+      line-height: 1.25;
+    }
+
+    .rare-section {
+      padding-top: 0.8rem;
+      border-top: 1px dashed #cdd3dc;
+    }
+
+    .rare-section h2 { color: #5f5b54; }
+
+    @media (max-width: 980px) {
+      .paired-tables { grid-template-columns: 1fr; }
+      .section-head { align-items: flex-start; flex-direction: column; gap: 0.3rem; }
+      .formula { text-align: left; }
+    }
+
+    @media print {
+      @page { size: landscape; margin: 10mm; }
+      * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      body { min-height: auto; padding: 0; background: white; }
+      main { width: 100%; padding: 0; border: 0; box-shadow: none; }
+      section { break-inside: avoid; margin-top: 5mm; }
+      main > section:first-of-type { margin-top: 0; }
+      .table-wrap { overflow: visible; }
+      table { min-width: 0 !important; }
+      th, td { padding: 4px 5px; }
+      tbody th, .person { position: static; box-shadow: none; }
+      .paired-tables { grid-template-columns: 1fr; gap: 5mm; }
+    }
+  
+    main { max-width: 1180px; }
+    .page-head { margin-bottom: 0.75rem; }
+    .topline { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; }
+    .back-link, .source-links a, .family-card a { color: #355c91; text-underline-offset: 0.15em; }
+    .back-link { font-size: 0.78rem; font-weight: 750; text-decoration: none; }
+    .model-number { color: var(--muted); font: 700 0.72rem/1 ui-monospace, monospace; }
+    h1 { margin: 0.34rem 0 0.28rem; font-size: clamp(1.35rem, 2.7vw, 2rem); line-height: 1.06; letter-spacing: -0.03em; }
+    .signature { margin: 0; color: #5c2f42; font: 800 0.84rem/1.35 ui-monospace, monospace; }
+    .scope-note { max-width: 78ch; margin: 0.6rem 0 0; color: var(--muted); font-size: 0.76rem; line-height: 1.45; }
+    .member-list { display: flex; flex-wrap: wrap; gap: 0.28rem; margin: 0.65rem 0 0; padding: 0; list-style: none; }
+    .member-list > li { padding: 0.2rem 0.42rem; border: 1px solid #d5dbe5; border-radius: 999px; background: #f7f9fc; font: 700 0.69rem/1.1 ui-monospace, monospace; }
+    .member-list.is-switcher > li { padding: 0; border: 0; background: transparent; }
+    .member-list button { appearance: none; padding: 0.22rem 0.46rem; border: 1px solid #c8d0dc; border-radius: 999px; color: #3f4c60; background: #f7f9fc; font: inherit; cursor: pointer; }
+    .member-list button:hover { border-color: #8e9caf; background: #eef3f9; }
+    .member-list button[aria-pressed="true"] { border-color: #77364e; color: #fff; background: #77364e; box-shadow: 0 0 0 1px #77364e; }
+    .member-list button:focus-visible { outline: 3px solid #f2b84b; outline-offset: 2px; }
+    .member-status { margin-top: 0.35rem; }
+    .family-note { margin: 0.45rem 0 0; padding: 0.38rem 0.55rem; border-left: 3px solid #8f6172; background: #fbf3f6; color: #5d3b48; font-size: 0.73rem; line-height: 1.35; }
+    .legend-row { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; margin-top: 0.55rem; color: var(--muted); font: 650 0.71rem/1.25 ui-monospace, monospace; }
+    .swatch { display: inline-block; width: 0.9rem; height: 0.7rem; margin-right: 0.22rem; vertical-align: -0.06rem; border-radius: 2px; }
+    .swatch.irregular { background: #ffdedf; border: 1px solid #bd3f4b; }
+    .swatch.orthographic { background: #fff2cf; border: 1px dashed #9b6b12; }
+    .is-irregular { background: #ffdedf !important; box-shadow: inset 0 0 0 1.5px #bd3f4b; }
+    .is-orthographic { background: #fff2cf !important; box-shadow: inset 0 0 0 1.5px #9b6b12; }
+    .form-variant { display: inline-block; padding: 0.05rem 0.18rem; border-radius: 3px; }
+    .variant-sep { color: #778196; font-weight: 500; }
+    .indicative-table { min-width: 760px; }
+    .subjunctive-table { min-width: 600px; table-layout: fixed; }
+    .compound-table { min-width: 1080px; }
+    .command-table { min-width: 310px; }
+    .nonfinite-table { min-width: 390px; }
+    .rare-table { min-width: 670px; table-layout: fixed; }
+    .indicative-table .person, .subjunctive-table .person, .rare-table .person { width: 142px; }
+    .indicative-table tbody td, .subjunctive-table tbody td { text-align: left; }
+    .stem-key { min-height: 1.55em; overflow-wrap: anywhere; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+    .sources { padding-top: 0.8rem; border-top: 1px dashed #cdd3dc; }
+    .sources h2 { color: #4c586c; }
+    .source-links { display: flex; flex-wrap: wrap; gap: 0.35rem 0.8rem; margin: 0; padding: 0; list-style: none; font-size: 0.72rem; }
+    .index-main { max-width: 1160px; }
+    .index-intro { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; align-items: end; }
+    .count-box { padding: 0.55rem 0.72rem; border: 1px solid #d6dce6; border-radius: 8px; background: #f7f9fc; font: 800 0.74rem/1.35 ui-monospace, monospace; text-align: right; }
+    .search-box { width: 100%; margin-top: 0.8rem; padding: 0.56rem 0.7rem; border: 1px solid #aeb9c8; border-radius: 7px; color: var(--ink); background: white; font: 650 0.82rem/1.2 ui-monospace, monospace; }
+    .family-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.52rem; }
+    .family-card { min-width: 0; padding: 0.62rem 0.68rem; border: 1px solid #d7dde6; border-radius: 8px; background: #fafbfd; }
+    .family-card h3 { margin: 0; font-size: 0.86rem; line-height: 1.2; }
+    .family-card p { margin: 0.28rem 0 0; color: var(--muted); font-size: 0.7rem; line-height: 1.3; }
+    .family-card .mini-signature { color: #70445a; font-family: ui-monospace, monospace; font-weight: 750; }
+    .control-note { padding: 0.6rem 0.7rem; border: 1px dashed #a9b4c2; border-radius: 8px; background: #f5f7fa; color: var(--muted); font-size: 0.74rem; line-height: 1.4; }
+    .defective-table { min-width: 820px; }
+    .unavailable { background: #edf0f4 !important; color: #6d7685; text-align: center !important; }
+    @media (forced-colors: active) { .is-irregular, .is-orthographic { outline: 2px solid CanvasText; outline-offset: -3px; } }
+    @media (max-width: 720px) { .index-intro { grid-template-columns: 1fr; } .count-box { text-align: left; } }
+</style>
+</head>
+<body>
+
+  <main>
+    <header class="page-head">
+      <div class="topline"><a class="back-link" href="index.html">← Índice de familias</a><span class="model-number">MODELO RAE 69</span></div>
+      <h1 data-slot="lemma">yacer</h1>
+      <p class="signature" data-slot="signature">yazc- / yazg- / yag- / yac-</p>
+      <p class="scope-note">Familia de conjugación del español estándar contemporáneo. Se muestran las cinco filas del cuadro latinoamericano: yo, tú, tercera persona singular, nosotros/as y tercera persona plural.</p>
+      <div class="legend-row"><span><span class="swatch irregular"></span>rojo = irregularidad que se memoriza</span><span><span class="swatch orthographic"></span>ámbar = ajuste predecible de escritura/sonido</span><span><span class="pattern">subrayado</span> = núcleo repetido · color = tiempo</span><span>acento negro = desplazamiento en nosotros/as</span></div>
+      <ul class="member-list is-switcher" aria-label="Miembros frecuentes de la familia"><li><button type="button" data-member-id="yacer" aria-pressed="true">yacer</button></li><li><button type="button" data-member-id="subyacer" aria-pressed="false">subyacer</button></li></ul>
+      <p class="family-note member-status" data-slot="member-note" hidden></p>
+      <p class="sr-only" data-member-live aria-live="polite" aria-atomic="true"></p>
+      
+    </header>
+
+    <section id="indicativo">
+      <div class="section-head"><h2>Indicativo · tiempos simples</h2><p class="formula" data-slot="indicative-formula">yacer</p></div>
+      <div class="table-wrap"><table class="indicative-table" data-table="indicative" aria-label="Conjugación de yacer en indicativo">
+        <thead><tr><th class="person" rowspan="2" scope="col">Persona</th><th class="present strong" scope="col">Presente</th><th class="preterite strong group-start" scope="col">Pretérito</th><th class="imperfect strong group-start" scope="col">Imperfecto</th><th class="future strong group-start" scope="col">Futuro</th><th class="conditional strong group-start" scope="col">Condicional</th></tr>
+        <tr><th class="present" scope="col">raíz + núcleo<span class="stem-key" data-header="ind_present">variante yazc- · variante yazg- · variante yag- · yac- + núcleo e</span></th><th class="preterite group-start" scope="col">raíz + núcleo<span class="stem-key" data-header="ind_preterite">yac- + i</span></th><th class="imperfect group-start" scope="col">raíz + núcleo<span class="stem-key" data-header="ind_imperfect">yac- + ía</span></th><th class="future group-start" scope="col">raíz + núcleo<span class="stem-key" data-header="ind_future">yacer +</span></th><th class="conditional group-start" scope="col">raíz + núcleo<span class="stem-key" data-header="ind_conditional">yacer + ía</span></th></tr></thead>
+        <tbody data-body="indicative"><tr><th scope="row">yo</th><td class="present"><span class="form-variant is-irregular" data-reason="variante yazc-" title="variante yazc-"><span class="sr-only">forma irregular: </span>yazco</span><span class="variant-sep"> / </span><span class="form-variant is-irregular" data-reason="variante yazg-" title="variante yazg-"><span class="sr-only">forma irregular: </span>yazgo</span><span class="variant-sep"> / </span><span class="form-variant is-irregular" data-reason="variante yag-" title="variante yag-"><span class="sr-only">forma irregular: </span>yago</span></td><td class="preterite group-start">yac<span class="pattern">í</span></td><td class="imperfect group-start">yac<span class="pattern">ía</span></td><td class="future group-start">yaceré</td><td class="conditional group-start">yacer<span class="pattern">ía</span></td></tr><tr><th scope="row">tú</th><td class="present">yac<span class="pattern">e</span>s</td><td class="preterite group-start">yac<span class="pattern">i</span>ste</td><td class="imperfect group-start">yac<span class="pattern">ía</span>s</td><td class="future group-start">yacerás</td><td class="conditional group-start">yacer<span class="pattern">ía</span>s</td></tr><tr><th scope="row">él/ella/Ud.</th><td class="present">yac<span class="pattern">e</span></td><td class="preterite group-start">yac<span class="pattern">i</span>ó</td><td class="imperfect group-start">yac<span class="pattern">ía</span></td><td class="future group-start">yacerá</td><td class="conditional group-start">yacer<span class="pattern">ía</span></td></tr><tr><th scope="row">nosotros/as</th><td class="present">yac<span class="pattern">e</span>mos</td><td class="preterite group-start">yac<span class="pattern">i</span>mos</td><td class="imperfect group-start">yac<span class="pattern">ía</span>mos</td><td class="future group-start">yaceremos</td><td class="conditional group-start">yacer<span class="pattern">ía</span>mos</td></tr><tr><th scope="row">ellos/ellas/Uds.</th><td class="present">yac<span class="pattern">e</span>n</td><td class="preterite group-start">yac<span class="pattern">i</span>eron</td><td class="imperfect group-start">yac<span class="pattern">ía</span>n</td><td class="future group-start">yacerán</td><td class="conditional group-start">yacer<span class="pattern">ía</span>n</td></tr></tbody>
+      </table></div>
+    </section>
+
+    <section id="subjuntivo">
+      <div class="section-head"><h2>Subjuntivo · tiempos simples</h2></div>
+      <div class="table-wrap"><table class="subjunctive-table" data-table="subjunctive" aria-label="Conjugación de yacer en subjuntivo">
+        <thead><tr><th class="person" rowspan="2" scope="col">Persona</th><th class="subjunctive strong" scope="col">Presente</th><th class="subjunctive strong group-start" scope="col">Imperfecto · -ra</th><th class="subjunctive strong group-start" scope="col">Imperfecto · -se</th></tr>
+        <tr><th class="subjunctive" scope="col">raíz + núcleo<span class="stem-key" data-header="subj_present">variante yazc- · variante yazg- · variante yag- · yazc-/yazg-/yag- + núcleo a</span></th><th class="subjunctive group-start" scope="col">raíz + núcleo<span class="stem-key" data-header="subj_ra">yac- + iera</span></th><th class="subjunctive group-start" scope="col">raíz + núcleo<span class="stem-key" data-header="subj_se">yac- + iese</span></th></tr></thead>
+        <tbody data-body="subjunctive"><tr><th scope="row">yo</th><td class="subjunctive"><span class="form-variant is-irregular" data-reason="variante yazc-" title="variante yazc-"><span class="sr-only">forma irregular: </span>yazc<span class="pattern">a</span></span><span class="variant-sep"> / </span><span class="form-variant is-irregular" data-reason="variante yazg-" title="variante yazg-"><span class="sr-only">forma irregular: </span>yazg<span class="pattern">a</span></span><span class="variant-sep"> / </span><span class="form-variant is-irregular" data-reason="variante yag-" title="variante yag-"><span class="sr-only">forma irregular: </span>yag<span class="pattern">a</span></span></td><td class="subjunctive group-start">yac<span class="pattern">iera</span></td><td class="subjunctive group-start">yac<span class="pattern">iese</span></td></tr><tr><th scope="row">tú</th><td class="subjunctive"><span class="form-variant is-irregular" data-reason="variante yazc-" title="variante yazc-"><span class="sr-only">forma irregular: </span>yazc<span class="pattern">a</span>s</span><span class="variant-sep"> / </span><span class="form-variant is-irregular" data-reason="variante yazg-" title="variante yazg-"><span class="sr-only">forma irregular: </span>yazg<span class="pattern">a</span>s</span><span class="variant-sep"> / </span><span class="form-variant is-irregular" data-reason="variante yag-" title="variante yag-"><span class="sr-only">forma irregular: </span>yag<span class="pattern">a</span>s</span></td><td class="subjunctive group-start">yac<span class="pattern">iera</span>s</td><td class="subjunctive group-start">yac<span class="pattern">iese</span>s</td></tr><tr><th scope="row">él/ella/Ud.</th><td class="subjunctive"><span class="form-variant is-irregular" data-reason="variante yazc-" title="variante yazc-"><span class="sr-only">forma irregular: </span>yazc<span class="pattern">a</span></span><span class="variant-sep"> / </span><span class="form-variant is-irregular" data-reason="variante yazg-" title="variante yazg-"><span class="sr-only">forma irregular: </span>yazg<span class="pattern">a</span></span><span class="variant-sep"> / </span><span class="form-variant is-irregular" data-reason="variante yag-" title="variante yag-"><span class="sr-only">forma irregular: </span>yag<span class="pattern">a</span></span></td><td class="subjunctive group-start">yac<span class="pattern">iera</span></td><td class="subjunctive group-start">yac<span class="pattern">iese</span></td></tr><tr><th scope="row">nosotros/as</th><td class="subjunctive"><span class="form-variant is-irregular" data-reason="variante yazc-" title="variante yazc-"><span class="sr-only">forma irregular: </span>yazc<span class="pattern">a</span>mos</span><span class="variant-sep"> / </span><span class="form-variant is-irregular" data-reason="variante yazg-" title="variante yazg-"><span class="sr-only">forma irregular: </span>yazg<span class="pattern">a</span>mos</span><span class="variant-sep"> / </span><span class="form-variant is-irregular" data-reason="variante yag-" title="variante yag-"><span class="sr-only">forma irregular: </span>yag<span class="pattern">a</span>mos</span></td><td class="subjunctive group-start">yac<span class="pattern">ie<span class="shift-accent">&#x301;</span>ra</span>mos</td><td class="subjunctive group-start">yac<span class="pattern">ie<span class="shift-accent">&#x301;</span>se</span>mos</td></tr><tr><th scope="row">ellos/ellas/Uds.</th><td class="subjunctive"><span class="form-variant is-irregular" data-reason="variante yazc-" title="variante yazc-"><span class="sr-only">forma irregular: </span>yazc<span class="pattern">a</span>n</span><span class="variant-sep"> / </span><span class="form-variant is-irregular" data-reason="variante yazg-" title="variante yazg-"><span class="sr-only">forma irregular: </span>yazg<span class="pattern">a</span>n</span><span class="variant-sep"> / </span><span class="form-variant is-irregular" data-reason="variante yag-" title="variante yag-"><span class="sr-only">forma irregular: </span>yag<span class="pattern">a</span>n</span></td><td class="subjunctive group-start">yac<span class="pattern">iera</span>n</td><td class="subjunctive group-start">yac<span class="pattern">iese</span>n</td></tr></tbody>
+      </table></div>
+    </section>
+
+    <section id="compuestos">
+      <div class="section-head"><h2>Tiempos compuestos</h2><p class="formula" data-slot="compound-formula">haber + yacido</p></div>
+      <div class="table-wrap"><table class="compound-table" data-table="compound" aria-label="Tiempos compuestos de yacer">
+        <thead><tr><th class="person" rowspan="2" scope="col">Persona</th><th class="compound-ind strong" colspan="4" scope="colgroup">Indicativo</th><th class="compound-sub strong group-start" colspan="3" scope="colgroup">Subjuntivo</th></tr>
+        <tr><th class="present" scope="col">Pretérito perfecto<span class="stem-key">he / ha + participio</span></th><th class="imperfect" scope="col">Pluscuamperfecto<span class="stem-key">había + participio</span></th><th class="future" scope="col">Futuro perfecto<span class="stem-key">habré / habrá / habre + participio</span></th><th class="conditional" scope="col">Condicional perfecto<span class="stem-key">habría + participio</span></th><th class="compound-sub group-start" scope="col">Pretérito perfecto<span class="stem-key">haya + participio</span></th><th class="compound-sub" scope="col">Pluscuamperfecto · -ra<span class="stem-key">hubiera + participio</span></th><th class="compound-sub" scope="col">Pluscuamperfecto · -se<span class="stem-key">hubiese + participio</span></th></tr></thead>
+        <tbody data-body="compound"><tr><th scope="row">yo</th><td class="present"><span class="pattern">he</span> yacido</td><td class="imperfect"><span class="pattern">había</span> yacido</td><td class="future"><span class="pattern">habré</span> yacido</td><td class="conditional"><span class="pattern">habría</span> yacido</td><td class="compound-sub group-start"><span class="pattern">haya</span> yacido</td><td class="compound-sub"><span class="pattern">hubiera</span> yacido</td><td class="compound-sub"><span class="pattern">hubiese</span> yacido</td></tr><tr><th scope="row">tú</th><td class="present"><span class="pattern">ha</span>s yacido</td><td class="imperfect"><span class="pattern">había</span>s yacido</td><td class="future"><span class="pattern">habrá</span>s yacido</td><td class="conditional"><span class="pattern">habría</span>s yacido</td><td class="compound-sub group-start"><span class="pattern">haya</span>s yacido</td><td class="compound-sub"><span class="pattern">hubiera</span>s yacido</td><td class="compound-sub"><span class="pattern">hubiese</span>s yacido</td></tr><tr><th scope="row">él/ella/Ud.</th><td class="present"><span class="pattern">ha</span> yacido</td><td class="imperfect"><span class="pattern">había</span> yacido</td><td class="future"><span class="pattern">habrá</span> yacido</td><td class="conditional"><span class="pattern">habría</span> yacido</td><td class="compound-sub group-start"><span class="pattern">haya</span> yacido</td><td class="compound-sub"><span class="pattern">hubiera</span> yacido</td><td class="compound-sub"><span class="pattern">hubiese</span> yacido</td></tr><tr><th scope="row">nosotros/as</th><td class="present"><span class="pattern">he</span>mos yacido</td><td class="imperfect"><span class="pattern">había</span>mos yacido</td><td class="future"><span class="pattern">habre</span>mos yacido</td><td class="conditional"><span class="pattern">habría</span>mos yacido</td><td class="compound-sub group-start"><span class="pattern">haya</span>mos yacido</td><td class="compound-sub"><span class="pattern">hubie<span class="shift-accent">&#x301;</span>ra</span>mos yacido</td><td class="compound-sub"><span class="pattern">hubie<span class="shift-accent">&#x301;</span>se</span>mos yacido</td></tr><tr><th scope="row">ellos/ellas/Uds.</th><td class="present"><span class="pattern">ha</span>n yacido</td><td class="imperfect"><span class="pattern">había</span>n yacido</td><td class="future"><span class="pattern">habrá</span>n yacido</td><td class="conditional"><span class="pattern">habría</span>n yacido</td><td class="compound-sub group-start"><span class="pattern">haya</span>n yacido</td><td class="compound-sub"><span class="pattern">hubiera</span>n yacido</td><td class="compound-sub"><span class="pattern">hubiese</span>n yacido</td></tr></tbody>
+      </table></div>
+    </section>
+
+    <section class="paired-tables" aria-label="Imperativo y formas no personales">
+      <div class="table-card" id="imperativo"><h2>Imperativo</h2><div class="table-wrap"><table class="command-table" data-table="command" aria-label="Imperativo afirmativo de yacer"><thead><tr><th class="person" scope="col">Persona</th><th class="affirmative strong" scope="col">Afirmativo<span class="stem-key">forma completa</span></th></tr></thead><tbody data-body="command"><tr><th scope="row">tú</th><td class="affirmative"><span class="form-variant">yac<span class="pattern">e</span></span><span class="variant-sep"> / </span><span class="form-variant is-irregular" data-reason="variante de imperativo yaz" title="variante de imperativo yaz"><span class="sr-only">forma irregular: </span>yaz</span></td></tr><tr><th scope="row">usted</th><td class="affirmative"><span class="form-variant is-irregular" data-reason="variante yazc-" title="variante yazc-"><span class="sr-only">forma irregular: </span>yazc<span class="pattern">a</span></span><span class="variant-sep"> / </span><span class="form-variant is-irregular" data-reason="variante yazg-" title="variante yazg-"><span class="sr-only">forma irregular: </span>yazg<span class="pattern">a</span></span><span class="variant-sep"> / </span><span class="form-variant is-irregular" data-reason="variante yag-" title="variante yag-"><span class="sr-only">forma irregular: </span>yag<span class="pattern">a</span></span></td></tr><tr><th scope="row">nosotros/as</th><td class="affirmative"><span class="form-variant is-irregular" data-reason="variante yazc-" title="variante yazc-"><span class="sr-only">forma irregular: </span>yazc<span class="pattern">a</span>mos</span><span class="variant-sep"> / </span><span class="form-variant is-irregular" data-reason="variante yazg-" title="variante yazg-"><span class="sr-only">forma irregular: </span>yazg<span class="pattern">a</span>mos</span><span class="variant-sep"> / </span><span class="form-variant is-irregular" data-reason="variante yag-" title="variante yag-"><span class="sr-only">forma irregular: </span>yag<span class="pattern">a</span>mos</span></td></tr><tr><th scope="row">ustedes</th><td class="affirmative"><span class="form-variant is-irregular" data-reason="variante yazc-" title="variante yazc-"><span class="sr-only">forma irregular: </span>yazc<span class="pattern">a</span>n</span><span class="variant-sep"> / </span><span class="form-variant is-irregular" data-reason="variante yazg-" title="variante yazg-"><span class="sr-only">forma irregular: </span>yazg<span class="pattern">a</span>n</span><span class="variant-sep"> / </span><span class="form-variant is-irregular" data-reason="variante yag-" title="variante yag-"><span class="sr-only">forma irregular: </span>yag<span class="pattern">a</span>n</span></td></tr></tbody></table></div><p class="command-rule"><strong>Negativo:</strong> no + <strong>presente de subjuntivo</strong></p></div>
+      <div class="table-card" id="no-personales"><h2>Formas no personales</h2><div class="table-wrap"><table class="nonfinite-table" data-table="nonfinite" aria-label="Formas no personales de yacer"><thead><tr><th class="person" scope="col">Forma</th><th class="nonfinite strong" scope="col"><span data-slot="nonfinite-header">yacer</span><span class="stem-key">simple / compuesta</span></th></tr></thead><tbody data-body="nonfinite"><tr><th scope="row">Infinitivo</th><td class="nonfinite">yacer</td></tr><tr><th scope="row">Gerundio</th><td class="nonfinite">yaciendo</td></tr><tr><th scope="row">Participio</th><td class="nonfinite">yacido</td></tr><tr><th scope="row">Infinitivo compuesto</th><td class="nonfinite">haber yacido</td></tr><tr><th scope="row">Gerundio compuesto</th><td class="nonfinite">habiendo yacido</td></tr></tbody></table></div></div>
+    </section>
+
+    <section class="rare-section" id="formas-raras">
+      <div class="section-head"><h2>Formas raras o históricas</h2><p class="formula">compuestos: haber + participio</p></div>
+      <div class="table-wrap"><table class="rare-table" data-table="rare" aria-label="Formas raras de yacer"><thead><tr><th class="person" rowspan="2" scope="col">Persona</th><th class="rare strong" scope="colgroup">Indicativo</th><th class="rare strong group-start" colspan="2" scope="colgroup">Subjuntivo</th></tr><tr><th class="rare" scope="col">Pretérito anterior<span class="stem-key">hube / hubi- / hubo / hubie-</span></th><th class="rare group-start" scope="col">Futuro<span class="stem-key" data-header="subj_future">yac- + iere</span></th><th class="rare" scope="col">Futuro perfecto<span class="stem-key">hubiere + participio</span></th></tr></thead><tbody data-body="rare"><tr><th scope="row">yo</th><td class="rare"><span class="pattern">hube</span> yacido</td><td class="rare group-start">yac<span class="pattern">iere</span></td><td class="rare"><span class="pattern">hubiere</span> yacido</td></tr><tr><th scope="row">tú</th><td class="rare"><span class="pattern">hubi</span>ste yacido</td><td class="rare group-start">yac<span class="pattern">iere</span>s</td><td class="rare"><span class="pattern">hubiere</span>s yacido</td></tr><tr><th scope="row">él/ella/Ud.</th><td class="rare"><span class="pattern">hubo</span> yacido</td><td class="rare group-start">yac<span class="pattern">iere</span></td><td class="rare"><span class="pattern">hubiere</span> yacido</td></tr><tr><th scope="row">nosotros/as</th><td class="rare"><span class="pattern">hubi</span>mos yacido</td><td class="rare group-start">yac<span class="pattern">ie<span class="shift-accent">&#x301;</span>re</span>mos</td><td class="rare"><span class="pattern">hubie<span class="shift-accent">&#x301;</span>re</span>mos yacido</td></tr><tr><th scope="row">ellos/ellas/Uds.</th><td class="rare"><span class="pattern">hubie</span>ron yacido</td><td class="rare group-start">yac<span class="pattern">iere</span>n</td><td class="rare"><span class="pattern">hubiere</span>n yacido</td></tr></tbody></table></div>
+    </section>
+    <section class="sources"><h2>Fuentes y criterio</h2><ul class="source-links"><li><a href="https://www.rae.es/buen-uso-español/conjugación-española">RAE/ASALE · modelos e índice</a></li><li><a href="https://www.rae.es/gramática/morfología/verbos-irregulares-ii-verbos-con-alternancia-vocálica">RAE/ASALE · alternancias vocálicas</a></li><li><a href="https://www.rae.es/gramática/morfología/verbos-irregulares-iii-verbos-con-alternancia-consonántica-su-concurrencia-con-las-vocálicas">RAE/ASALE · alternancias consonánticas</a></li><li><a href="https://www.rae.es/gramática/morfología/verbos-irregulares-iv-pretéritos-fuertes-y-participios-irregulares">RAE/ASALE · pretéritos y participios</a></li><li><a href="https://www.rae.es/gramática/morfología/verbos-irregulares-v-verbos-de-conjugación-especial-haber-ser-ir-estar-dar-raíces-verbales-supletivas">RAE/ASALE · paradigmas especiales</a></li><li><a href="https://cvc.cervantes.es/Ensenanza/biblioteca_ele/plan_curricular/niveles/02_gramatica_inventario_a1-a2.htm">Instituto Cervantes · inventario gramatical</a></li></ul></section>
+  </main>
+  
+  <script type="application/json" id="family-data">{"initial":"yacer","members":{"yacer":{"lemma":"yacer","title":"yacer · conjugación irregular","description":"Conjugación completa de yacer dentro de la familia irregular de yacer","signature":"yazc- / yazg- / yag- / yac-","indicative_formula":"yacer","compound_formula":"haber + yacido","nonfinite_header":"yacer","member_note":"","headers":{"ind_present":"variante yazc- · variante yazg- · variante yag- · yac- + núcleo e","ind_preterite":"yac- + i","ind_imperfect":"yac- + ía","ind_future":"yacer +","ind_conditional":"yacer + ía","subj_present":"variante yazc- · variante yazg- · variante yag- · yazc-/yazg-/yag- + núcleo a","subj_ra":"yac- + iera","subj_se":"yac- + iese","subj_future":"yac- + iere"},"bodies":{"indicative":"\u003ctr>\u003cth scope=\"row\">yo\u003c/th>\u003ctd class=\"present\">\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante yazc-\" title=\"variante yazc-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>yazco\u003c/span>\u003cspan class=\"variant-sep\"> / \u003c/span>\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante yazg-\" title=\"variante yazg-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>yazgo\u003c/span>\u003cspan class=\"variant-sep\"> / \u003c/span>\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante yag-\" title=\"variante yag-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>yago\u003c/span>\u003c/td>\u003ctd class=\"preterite group-start\">yac\u003cspan class=\"pattern\">í\u003c/span>\u003c/td>\u003ctd class=\"imperfect group-start\">yac\u003cspan class=\"pattern\">ía\u003c/span>\u003c/td>\u003ctd class=\"future group-start\">yaceré\u003c/td>\u003ctd class=\"conditional group-start\">yacer\u003cspan class=\"pattern\">ía\u003c/span>\u003c/td>\u003c/tr>\u003ctr>\u003cth scope=\"row\">tú\u003c/th>\u003ctd class=\"present\">yac\u003cspan class=\"pattern\">e\u003c/span>s\u003c/td>\u003ctd class=\"preterite group-start\">yac\u003cspan class=\"pattern\">i\u003c/span>ste\u003c/td>\u003ctd class=\"imperfect group-start\">yac\u003cspan class=\"pattern\">ía\u003c/span>s\u003c/td>\u003ctd class=\"future group-start\">yacerás\u003c/td>\u003ctd class=\"conditional group-start\">yacer\u003cspan class=\"pattern\">ía\u003c/span>s\u003c/td>\u003c/tr>\u003ctr>\u003cth scope=\"row\">él/ella/Ud.\u003c/th>\u003ctd class=\"present\">yac\u003cspan class=\"pattern\">e\u003c/span>\u003c/td>\u003ctd class=\"preterite group-start\">yac\u003cspan class=\"pattern\">i\u003c/span>ó\u003c/td>\u003ctd class=\"imperfect group-start\">yac\u003cspan class=\"pattern\">ía\u003c/span>\u003c/td>\u003ctd class=\"future group-start\">yacerá\u003c/td>\u003ctd class=\"conditional group-start\">yacer\u003cspan class=\"pattern\">ía\u003c/span>\u003c/td>\u003c/tr>\u003ctr>\u003cth scope=\"row\">nosotros/as\u003c/th>\u003ctd class=\"present\">yac\u003cspan class=\"pattern\">e\u003c/span>mos\u003c/td>\u003ctd class=\"preterite group-start\">yac\u003cspan class=\"pattern\">i\u003c/span>mos\u003c/td>\u003ctd class=\"imperfect group-start\">yac\u003cspan class=\"pattern\">ía\u003c/span>mos\u003c/td>\u003ctd class=\"future group-start\">yaceremos\u003c/td>\u003ctd class=\"conditional group-start\">yacer\u003cspan class=\"pattern\">ía\u003c/span>mos\u003c/td>\u003c/tr>\u003ctr>\u003cth scope=\"row\">ellos/ellas/Uds.\u003c/th>\u003ctd class=\"present\">yac\u003cspan class=\"pattern\">e\u003c/span>n\u003c/td>\u003ctd class=\"preterite group-start\">yac\u003cspan class=\"pattern\">i\u003c/span>eron\u003c/td>\u003ctd class=\"imperfect group-start\">yac\u003cspan class=\"pattern\">ía\u003c/span>n\u003c/td>\u003ctd class=\"future group-start\">yacerán\u003c/td>\u003ctd class=\"conditional group-start\">yacer\u003cspan class=\"pattern\">ía\u003c/span>n\u003c/td>\u003c/tr>","subjunctive":"\u003ctr>\u003cth scope=\"row\">yo\u003c/th>\u003ctd class=\"subjunctive\">\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante yazc-\" title=\"variante yazc-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>yazc\u003cspan class=\"pattern\">a\u003c/span>\u003c/span>\u003cspan class=\"variant-sep\"> / \u003c/span>\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante yazg-\" title=\"variante yazg-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>yazg\u003cspan class=\"pattern\">a\u003c/span>\u003c/span>\u003cspan class=\"variant-sep\"> / \u003c/span>\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante yag-\" title=\"variante yag-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>yag\u003cspan class=\"pattern\">a\u003c/span>\u003c/span>\u003c/td>\u003ctd class=\"subjunctive group-start\">yac\u003cspan class=\"pattern\">iera\u003c/span>\u003c/td>\u003ctd class=\"subjunctive group-start\">yac\u003cspan class=\"pattern\">iese\u003c/span>\u003c/td>\u003c/tr>\u003ctr>\u003cth scope=\"row\">tú\u003c/th>\u003ctd class=\"subjunctive\">\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante yazc-\" title=\"variante yazc-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>yazc\u003cspan class=\"pattern\">a\u003c/span>s\u003c/span>\u003cspan class=\"variant-sep\"> / \u003c/span>\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante yazg-\" title=\"variante yazg-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>yazg\u003cspan class=\"pattern\">a\u003c/span>s\u003c/span>\u003cspan class=\"variant-sep\"> / \u003c/span>\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante yag-\" title=\"variante yag-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>yag\u003cspan class=\"pattern\">a\u003c/span>s\u003c/span>\u003c/td>\u003ctd class=\"subjunctive group-start\">yac\u003cspan class=\"pattern\">iera\u003c/span>s\u003c/td>\u003ctd class=\"subjunctive group-start\">yac\u003cspan class=\"pattern\">iese\u003c/span>s\u003c/td>\u003c/tr>\u003ctr>\u003cth scope=\"row\">él/ella/Ud.\u003c/th>\u003ctd class=\"subjunctive\">\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante yazc-\" title=\"variante yazc-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>yazc\u003cspan class=\"pattern\">a\u003c/span>\u003c/span>\u003cspan class=\"variant-sep\"> / \u003c/span>\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante yazg-\" title=\"variante yazg-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>yazg\u003cspan class=\"pattern\">a\u003c/span>\u003c/span>\u003cspan class=\"variant-sep\"> / \u003c/span>\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante yag-\" title=\"variante yag-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>yag\u003cspan class=\"pattern\">a\u003c/span>\u003c/span>\u003c/td>\u003ctd class=\"subjunctive group-start\">yac\u003cspan class=\"pattern\">iera\u003c/span>\u003c/td>\u003ctd class=\"subjunctive group-start\">yac\u003cspan class=\"pattern\">iese\u003c/span>\u003c/td>\u003c/tr>\u003ctr>\u003cth scope=\"row\">nosotros/as\u003c/th>\u003ctd class=\"subjunctive\">\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante yazc-\" title=\"variante yazc-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>yazc\u003cspan class=\"pattern\">a\u003c/span>mos\u003c/span>\u003cspan class=\"variant-sep\"> / \u003c/span>\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante yazg-\" title=\"variante yazg-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>yazg\u003cspan class=\"pattern\">a\u003c/span>mos\u003c/span>\u003cspan class=\"variant-sep\"> / \u003c/span>\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante yag-\" title=\"variante yag-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>yag\u003cspan class=\"pattern\">a\u003c/span>mos\u003c/span>\u003c/td>\u003ctd class=\"subjunctive group-start\">yac\u003cspan class=\"pattern\">ie\u003cspan class=\"shift-accent\">&#x301;\u003c/span>ra\u003c/span>mos\u003c/td>\u003ctd class=\"subjunctive group-start\">yac\u003cspan class=\"pattern\">ie\u003cspan class=\"shift-accent\">&#x301;\u003c/span>se\u003c/span>mos\u003c/td>\u003c/tr>\u003ctr>\u003cth scope=\"row\">ellos/ellas/Uds.\u003c/th>\u003ctd class=\"subjunctive\">\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante yazc-\" title=\"variante yazc-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>yazc\u003cspan class=\"pattern\">a\u003c/span>n\u003c/span>\u003cspan class=\"variant-sep\"> / \u003c/span>\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante yazg-\" title=\"variante yazg-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>yazg\u003cspan class=\"pattern\">a\u003c/span>n\u003c/span>\u003cspan class=\"variant-sep\"> / \u003c/span>\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante yag-\" title=\"variante yag-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>yag\u003cspan class=\"pattern\">a\u003c/span>n\u003c/span>\u003c/td>\u003ctd class=\"subjunctive group-start\">yac\u003cspan class=\"pattern\">iera\u003c/span>n\u003c/td>\u003ctd class=\"subjunctive group-start\">yac\u003cspan class=\"pattern\">iese\u003c/span>n\u003c/td>\u003c/tr>","compound":"\u003ctr>\u003cth scope=\"row\">yo\u003c/th>\u003ctd class=\"present\">\u003cspan class=\"pattern\">he\u003c/span> yacido\u003c/td>\u003ctd class=\"imperfect\">\u003cspan class=\"pattern\">había\u003c/span> yacido\u003c/td>\u003ctd class=\"future\">\u003cspan class=\"pattern\">habré\u003c/span> yacido\u003c/td>\u003ctd class=\"conditional\">\u003cspan class=\"pattern\">habría\u003c/span> yacido\u003c/td>\u003ctd class=\"compound-sub group-start\">\u003cspan class=\"pattern\">haya\u003c/span> yacido\u003c/td>\u003ctd class=\"compound-sub\">\u003cspan class=\"pattern\">hubiera\u003c/span> yacido\u003c/td>\u003ctd class=\"compound-sub\">\u003cspan class=\"pattern\">hubiese\u003c/span> yacido\u003c/td>\u003c/tr>\u003ctr>\u003cth scope=\"row\">tú\u003c/th>\u003ctd class=\"present\">\u003cspan class=\"pattern\">ha\u003c/span>s yacido\u003c/td>\u003ctd class=\"imperfect\">\u003cspan class=\"pattern\">había\u003c/span>s yacido\u003c/td>\u003ctd class=\"future\">\u003cspan class=\"pattern\">habrá\u003c/span>s yacido\u003c/td>\u003ctd class=\"conditional\">\u003cspan class=\"pattern\">habría\u003c/span>s yacido\u003c/td>\u003ctd class=\"compound-sub group-start\">\u003cspan class=\"pattern\">haya\u003c/span>s yacido\u003c/td>\u003ctd class=\"compound-sub\">\u003cspan class=\"pattern\">hubiera\u003c/span>s yacido\u003c/td>\u003ctd class=\"compound-sub\">\u003cspan class=\"pattern\">hubiese\u003c/span>s yacido\u003c/td>\u003c/tr>\u003ctr>\u003cth scope=\"row\">él/ella/Ud.\u003c/th>\u003ctd class=\"present\">\u003cspan class=\"pattern\">ha\u003c/span> yacido\u003c/td>\u003ctd class=\"imperfect\">\u003cspan class=\"pattern\">había\u003c/span> yacido\u003c/td>\u003ctd class=\"future\">\u003cspan class=\"pattern\">habrá\u003c/span> yacido\u003c/td>\u003ctd class=\"conditional\">\u003cspan class=\"pattern\">habría\u003c/span> yacido\u003c/td>\u003ctd class=\"compound-sub group-start\">\u003cspan class=\"pattern\">haya\u003c/span> yacido\u003c/td>\u003ctd class=\"compound-sub\">\u003cspan class=\"pattern\">hubiera\u003c/span> yacido\u003c/td>\u003ctd class=\"compound-sub\">\u003cspan class=\"pattern\">hubiese\u003c/span> yacido\u003c/td>\u003c/tr>\u003ctr>\u003cth scope=\"row\">nosotros/as\u003c/th>\u003ctd class=\"present\">\u003cspan class=\"pattern\">he\u003c/span>mos yacido\u003c/td>\u003ctd class=\"imperfect\">\u003cspan class=\"pattern\">había\u003c/span>mos yacido\u003c/td>\u003ctd class=\"future\">\u003cspan class=\"pattern\">habre\u003c/span>mos yacido\u003c/td>\u003ctd class=\"conditional\">\u003cspan class=\"pattern\">habría\u003c/span>mos yacido\u003c/td>\u003ctd class=\"compound-sub group-start\">\u003cspan class=\"pattern\">haya\u003c/span>mos yacido\u003c/td>\u003ctd class=\"compound-sub\">\u003cspan class=\"pattern\">hubie\u003cspan class=\"shift-accent\">&#x301;\u003c/span>ra\u003c/span>mos yacido\u003c/td>\u003ctd class=\"compound-sub\">\u003cspan class=\"pattern\">hubie\u003cspan class=\"shift-accent\">&#x301;\u003c/span>se\u003c/span>mos yacido\u003c/td>\u003c/tr>\u003ctr>\u003cth scope=\"row\">ellos/ellas/Uds.\u003c/th>\u003ctd class=\"present\">\u003cspan class=\"pattern\">ha\u003c/span>n yacido\u003c/td>\u003ctd class=\"imperfect\">\u003cspan class=\"pattern\">había\u003c/span>n yacido\u003c/td>\u003ctd class=\"future\">\u003cspan class=\"pattern\">habrá\u003c/span>n yacido\u003c/td>\u003ctd class=\"conditional\">\u003cspan class=\"pattern\">habría\u003c/span>n yacido\u003c/td>\u003ctd class=\"compound-sub group-start\">\u003cspan class=\"pattern\">haya\u003c/span>n yacido\u003c/td>\u003ctd class=\"compound-sub\">\u003cspan class=\"pattern\">hubiera\u003c/span>n yacido\u003c/td>\u003ctd class=\"compound-sub\">\u003cspan class=\"pattern\">hubiese\u003c/span>n yacido\u003c/td>\u003c/tr>","command":"\u003ctr>\u003cth scope=\"row\">tú\u003c/th>\u003ctd class=\"affirmative\">\u003cspan class=\"form-variant\">yac\u003cspan class=\"pattern\">e\u003c/span>\u003c/span>\u003cspan class=\"variant-sep\"> / \u003c/span>\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante de imperativo yaz\" title=\"variante de imperativo yaz\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>yaz\u003c/span>\u003c/td>\u003c/tr>\u003ctr>\u003cth scope=\"row\">usted\u003c/th>\u003ctd class=\"affirmative\">\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante yazc-\" title=\"variante yazc-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>yazc\u003cspan class=\"pattern\">a\u003c/span>\u003c/span>\u003cspan class=\"variant-sep\"> / \u003c/span>\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante yazg-\" title=\"variante yazg-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>yazg\u003cspan class=\"pattern\">a\u003c/span>\u003c/span>\u003cspan class=\"variant-sep\"> / \u003c/span>\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante yag-\" title=\"variante yag-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>yag\u003cspan class=\"pattern\">a\u003c/span>\u003c/span>\u003c/td>\u003c/tr>\u003ctr>\u003cth scope=\"row\">nosotros/as\u003c/th>\u003ctd class=\"affirmative\">\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante yazc-\" title=\"variante yazc-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>yazc\u003cspan class=\"pattern\">a\u003c/span>mos\u003c/span>\u003cspan class=\"variant-sep\"> / \u003c/span>\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante yazg-\" title=\"variante yazg-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>yazg\u003cspan class=\"pattern\">a\u003c/span>mos\u003c/span>\u003cspan class=\"variant-sep\"> / \u003c/span>\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante yag-\" title=\"variante yag-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>yag\u003cspan class=\"pattern\">a\u003c/span>mos\u003c/span>\u003c/td>\u003c/tr>\u003ctr>\u003cth scope=\"row\">ustedes\u003c/th>\u003ctd class=\"affirmative\">\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante yazc-\" title=\"variante yazc-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>yazc\u003cspan class=\"pattern\">a\u003c/span>n\u003c/span>\u003cspan class=\"variant-sep\"> / \u003c/span>\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante yazg-\" title=\"variante yazg-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>yazg\u003cspan class=\"pattern\">a\u003c/span>n\u003c/span>\u003cspan class=\"variant-sep\"> / \u003c/span>\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante yag-\" title=\"variante yag-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>yag\u003cspan class=\"pattern\">a\u003c/span>n\u003c/span>\u003c/td>\u003c/tr>","nonfinite":"\u003ctr>\u003cth scope=\"row\">Infinitivo\u003c/th>\u003ctd class=\"nonfinite\">yacer\u003c/td>\u003c/tr>\u003ctr>\u003cth scope=\"row\">Gerundio\u003c/th>\u003ctd class=\"nonfinite\">yaciendo\u003c/td>\u003c/tr>\u003ctr>\u003cth scope=\"row\">Participio\u003c/th>\u003ctd class=\"nonfinite\">yacido\u003c/td>\u003c/tr>\u003ctr>\u003cth scope=\"row\">Infinitivo compuesto\u003c/th>\u003ctd class=\"nonfinite\">haber yacido\u003c/td>\u003c/tr>\u003ctr>\u003cth scope=\"row\">Gerundio compuesto\u003c/th>\u003ctd class=\"nonfinite\">habiendo yacido\u003c/td>\u003c/tr>","rare":"\u003ctr>\u003cth scope=\"row\">yo\u003c/th>\u003ctd class=\"rare\">\u003cspan class=\"pattern\">hube\u003c/span> yacido\u003c/td>\u003ctd class=\"rare group-start\">yac\u003cspan class=\"pattern\">iere\u003c/span>\u003c/td>\u003ctd class=\"rare\">\u003cspan class=\"pattern\">hubiere\u003c/span> yacido\u003c/td>\u003c/tr>\u003ctr>\u003cth scope=\"row\">tú\u003c/th>\u003ctd class=\"rare\">\u003cspan class=\"pattern\">hubi\u003c/span>ste yacido\u003c/td>\u003ctd class=\"rare group-start\">yac\u003cspan class=\"pattern\">iere\u003c/span>s\u003c/td>\u003ctd class=\"rare\">\u003cspan class=\"pattern\">hubiere\u003c/span>s yacido\u003c/td>\u003c/tr>\u003ctr>\u003cth scope=\"row\">él/ella/Ud.\u003c/th>\u003ctd class=\"rare\">\u003cspan class=\"pattern\">hubo\u003c/span> yacido\u003c/td>\u003ctd class=\"rare group-start\">yac\u003cspan class=\"pattern\">iere\u003c/span>\u003c/td>\u003ctd class=\"rare\">\u003cspan class=\"pattern\">hubiere\u003c/span> yacido\u003c/td>\u003c/tr>\u003ctr>\u003cth scope=\"row\">nosotros/as\u003c/th>\u003ctd class=\"rare\">\u003cspan class=\"pattern\">hubi\u003c/span>mos yacido\u003c/td>\u003ctd class=\"rare group-start\">yac\u003cspan class=\"pattern\">ie\u003cspan class=\"shift-accent\">&#x301;\u003c/span>re\u003c/span>mos\u003c/td>\u003ctd class=\"rare\">\u003cspan class=\"pattern\">hubie\u003cspan class=\"shift-accent\">&#x301;\u003c/span>re\u003c/span>mos yacido\u003c/td>\u003c/tr>\u003ctr>\u003cth scope=\"row\">ellos/ellas/Uds.\u003c/th>\u003ctd class=\"rare\">\u003cspan class=\"pattern\">hubie\u003c/span>ron yacido\u003c/td>\u003ctd class=\"rare group-start\">yac\u003cspan class=\"pattern\">iere\u003c/span>n\u003c/td>\u003ctd class=\"rare\">\u003cspan class=\"pattern\">hubiere\u003c/span>n yacido\u003c/td>\u003c/tr>"},"labels":{"indicative":"Conjugación de yacer en indicativo","subjunctive":"Conjugación de yacer en subjuntivo","compound":"Tiempos compuestos de yacer","command":"Imperativo afirmativo de yacer","nonfinite":"Formas no personales de yacer","rare":"Formas raras de yacer"}},"subyacer":{"lemma":"subyacer","title":"subyacer · conjugación irregular","description":"Conjugación completa de subyacer dentro de la familia irregular de yacer","signature":"subyazc- / subyazg- / subyag- / subyac-","indicative_formula":"subyacer","compound_formula":"haber + subyacido","nonfinite_header":"subyacer","member_note":"","headers":{"ind_present":"variante subyazc- · variante subyazg- · variante subyag- · subyac- + núcleo e","ind_preterite":"subyac- + i","ind_imperfect":"subyac- + ía","ind_future":"subyacer +","ind_conditional":"subyacer + ía","subj_present":"variante subyazc- · variante subyazg- · variante subyag- · subyazc-/subyazg-/subyag- + núcleo a","subj_ra":"subyac- + iera","subj_se":"subyac- + iese","subj_future":"subyac- + iere"},"bodies":{"indicative":"\u003ctr>\u003cth scope=\"row\">yo\u003c/th>\u003ctd class=\"present\">\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante subyazc-\" title=\"variante subyazc-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>subyazco\u003c/span>\u003cspan class=\"variant-sep\"> / \u003c/span>\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante subyazg-\" title=\"variante subyazg-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>subyazgo\u003c/span>\u003cspan class=\"variant-sep\"> / \u003c/span>\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante subyag-\" title=\"variante subyag-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>subyago\u003c/span>\u003c/td>\u003ctd class=\"preterite group-start\">subyac\u003cspan class=\"pattern\">í\u003c/span>\u003c/td>\u003ctd class=\"imperfect group-start\">subyac\u003cspan class=\"pattern\">ía\u003c/span>\u003c/td>\u003ctd class=\"future group-start\">subyaceré\u003c/td>\u003ctd class=\"conditional group-start\">subyacer\u003cspan class=\"pattern\">ía\u003c/span>\u003c/td>\u003c/tr>\u003ctr>\u003cth scope=\"row\">tú\u003c/th>\u003ctd class=\"present\">subyac\u003cspan class=\"pattern\">e\u003c/span>s\u003c/td>\u003ctd class=\"preterite group-start\">subyac\u003cspan class=\"pattern\">i\u003c/span>ste\u003c/td>\u003ctd class=\"imperfect group-start\">subyac\u003cspan class=\"pattern\">ía\u003c/span>s\u003c/td>\u003ctd class=\"future group-start\">subyacerás\u003c/td>\u003ctd class=\"conditional group-start\">subyacer\u003cspan class=\"pattern\">ía\u003c/span>s\u003c/td>\u003c/tr>\u003ctr>\u003cth scope=\"row\">él/ella/Ud.\u003c/th>\u003ctd class=\"present\">subyac\u003cspan class=\"pattern\">e\u003c/span>\u003c/td>\u003ctd class=\"preterite group-start\">subyac\u003cspan class=\"pattern\">i\u003c/span>ó\u003c/td>\u003ctd class=\"imperfect group-start\">subyac\u003cspan class=\"pattern\">ía\u003c/span>\u003c/td>\u003ctd class=\"future group-start\">subyacerá\u003c/td>\u003ctd class=\"conditional group-start\">subyacer\u003cspan class=\"pattern\">ía\u003c/span>\u003c/td>\u003c/tr>\u003ctr>\u003cth scope=\"row\">nosotros/as\u003c/th>\u003ctd class=\"present\">subyac\u003cspan class=\"pattern\">e\u003c/span>mos\u003c/td>\u003ctd class=\"preterite group-start\">subyac\u003cspan class=\"pattern\">i\u003c/span>mos\u003c/td>\u003ctd class=\"imperfect group-start\">subyac\u003cspan class=\"pattern\">ía\u003c/span>mos\u003c/td>\u003ctd class=\"future group-start\">subyaceremos\u003c/td>\u003ctd class=\"conditional group-start\">subyacer\u003cspan class=\"pattern\">ía\u003c/span>mos\u003c/td>\u003c/tr>\u003ctr>\u003cth scope=\"row\">ellos/ellas/Uds.\u003c/th>\u003ctd class=\"present\">subyac\u003cspan class=\"pattern\">e\u003c/span>n\u003c/td>\u003ctd class=\"preterite group-start\">subyac\u003cspan class=\"pattern\">i\u003c/span>eron\u003c/td>\u003ctd class=\"imperfect group-start\">subyac\u003cspan class=\"pattern\">ía\u003c/span>n\u003c/td>\u003ctd class=\"future group-start\">subyacerán\u003c/td>\u003ctd class=\"conditional group-start\">subyacer\u003cspan class=\"pattern\">ía\u003c/span>n\u003c/td>\u003c/tr>","subjunctive":"\u003ctr>\u003cth scope=\"row\">yo\u003c/th>\u003ctd class=\"subjunctive\">\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante subyazc-\" title=\"variante subyazc-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>subyazc\u003cspan class=\"pattern\">a\u003c/span>\u003c/span>\u003cspan class=\"variant-sep\"> / \u003c/span>\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante subyazg-\" title=\"variante subyazg-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>subyazg\u003cspan class=\"pattern\">a\u003c/span>\u003c/span>\u003cspan class=\"variant-sep\"> / \u003c/span>\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante subyag-\" title=\"variante subyag-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>subyag\u003cspan class=\"pattern\">a\u003c/span>\u003c/span>\u003c/td>\u003ctd class=\"subjunctive group-start\">subyac\u003cspan class=\"pattern\">iera\u003c/span>\u003c/td>\u003ctd class=\"subjunctive group-start\">subyac\u003cspan class=\"pattern\">iese\u003c/span>\u003c/td>\u003c/tr>\u003ctr>\u003cth scope=\"row\">tú\u003c/th>\u003ctd class=\"subjunctive\">\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante subyazc-\" title=\"variante subyazc-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>subyazc\u003cspan class=\"pattern\">a\u003c/span>s\u003c/span>\u003cspan class=\"variant-sep\"> / \u003c/span>\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante subyazg-\" title=\"variante subyazg-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>subyazg\u003cspan class=\"pattern\">a\u003c/span>s\u003c/span>\u003cspan class=\"variant-sep\"> / \u003c/span>\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante subyag-\" title=\"variante subyag-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>subyag\u003cspan class=\"pattern\">a\u003c/span>s\u003c/span>\u003c/td>\u003ctd class=\"subjunctive group-start\">subyac\u003cspan class=\"pattern\">iera\u003c/span>s\u003c/td>\u003ctd class=\"subjunctive group-start\">subyac\u003cspan class=\"pattern\">iese\u003c/span>s\u003c/td>\u003c/tr>\u003ctr>\u003cth scope=\"row\">él/ella/Ud.\u003c/th>\u003ctd class=\"subjunctive\">\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante subyazc-\" title=\"variante subyazc-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>subyazc\u003cspan class=\"pattern\">a\u003c/span>\u003c/span>\u003cspan class=\"variant-sep\"> / \u003c/span>\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante subyazg-\" title=\"variante subyazg-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>subyazg\u003cspan class=\"pattern\">a\u003c/span>\u003c/span>\u003cspan class=\"variant-sep\"> / \u003c/span>\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante subyag-\" title=\"variante subyag-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>subyag\u003cspan class=\"pattern\">a\u003c/span>\u003c/span>\u003c/td>\u003ctd class=\"subjunctive group-start\">subyac\u003cspan class=\"pattern\">iera\u003c/span>\u003c/td>\u003ctd class=\"subjunctive group-start\">subyac\u003cspan class=\"pattern\">iese\u003c/span>\u003c/td>\u003c/tr>\u003ctr>\u003cth scope=\"row\">nosotros/as\u003c/th>\u003ctd class=\"subjunctive\">\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante subyazc-\" title=\"variante subyazc-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>subyazc\u003cspan class=\"pattern\">a\u003c/span>mos\u003c/span>\u003cspan class=\"variant-sep\"> / \u003c/span>\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante subyazg-\" title=\"variante subyazg-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>subyazg\u003cspan class=\"pattern\">a\u003c/span>mos\u003c/span>\u003cspan class=\"variant-sep\"> / \u003c/span>\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante subyag-\" title=\"variante subyag-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>subyag\u003cspan class=\"pattern\">a\u003c/span>mos\u003c/span>\u003c/td>\u003ctd class=\"subjunctive group-start\">subyac\u003cspan class=\"pattern\">ie\u003cspan class=\"shift-accent\">&#x301;\u003c/span>ra\u003c/span>mos\u003c/td>\u003ctd class=\"subjunctive group-start\">subyac\u003cspan class=\"pattern\">ie\u003cspan class=\"shift-accent\">&#x301;\u003c/span>se\u003c/span>mos\u003c/td>\u003c/tr>\u003ctr>\u003cth scope=\"row\">ellos/ellas/Uds.\u003c/th>\u003ctd class=\"subjunctive\">\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante subyazc-\" title=\"variante subyazc-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>subyazc\u003cspan class=\"pattern\">a\u003c/span>n\u003c/span>\u003cspan class=\"variant-sep\"> / \u003c/span>\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante subyazg-\" title=\"variante subyazg-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>subyazg\u003cspan class=\"pattern\">a\u003c/span>n\u003c/span>\u003cspan class=\"variant-sep\"> / \u003c/span>\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante subyag-\" title=\"variante subyag-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>subyag\u003cspan class=\"pattern\">a\u003c/span>n\u003c/span>\u003c/td>\u003ctd class=\"subjunctive group-start\">subyac\u003cspan class=\"pattern\">iera\u003c/span>n\u003c/td>\u003ctd class=\"subjunctive group-start\">subyac\u003cspan class=\"pattern\">iese\u003c/span>n\u003c/td>\u003c/tr>","compound":"\u003ctr>\u003cth scope=\"row\">yo\u003c/th>\u003ctd class=\"present\">\u003cspan class=\"pattern\">he\u003c/span> subyacido\u003c/td>\u003ctd class=\"imperfect\">\u003cspan class=\"pattern\">había\u003c/span> subyacido\u003c/td>\u003ctd class=\"future\">\u003cspan class=\"pattern\">habré\u003c/span> subyacido\u003c/td>\u003ctd class=\"conditional\">\u003cspan class=\"pattern\">habría\u003c/span> subyacido\u003c/td>\u003ctd class=\"compound-sub group-start\">\u003cspan class=\"pattern\">haya\u003c/span> subyacido\u003c/td>\u003ctd class=\"compound-sub\">\u003cspan class=\"pattern\">hubiera\u003c/span> subyacido\u003c/td>\u003ctd class=\"compound-sub\">\u003cspan class=\"pattern\">hubiese\u003c/span> subyacido\u003c/td>\u003c/tr>\u003ctr>\u003cth scope=\"row\">tú\u003c/th>\u003ctd class=\"present\">\u003cspan class=\"pattern\">ha\u003c/span>s subyacido\u003c/td>\u003ctd class=\"imperfect\">\u003cspan class=\"pattern\">había\u003c/span>s subyacido\u003c/td>\u003ctd class=\"future\">\u003cspan class=\"pattern\">habrá\u003c/span>s subyacido\u003c/td>\u003ctd class=\"conditional\">\u003cspan class=\"pattern\">habría\u003c/span>s subyacido\u003c/td>\u003ctd class=\"compound-sub group-start\">\u003cspan class=\"pattern\">haya\u003c/span>s subyacido\u003c/td>\u003ctd class=\"compound-sub\">\u003cspan class=\"pattern\">hubiera\u003c/span>s subyacido\u003c/td>\u003ctd class=\"compound-sub\">\u003cspan class=\"pattern\">hubiese\u003c/span>s subyacido\u003c/td>\u003c/tr>\u003ctr>\u003cth scope=\"row\">él/ella/Ud.\u003c/th>\u003ctd class=\"present\">\u003cspan class=\"pattern\">ha\u003c/span> subyacido\u003c/td>\u003ctd class=\"imperfect\">\u003cspan class=\"pattern\">había\u003c/span> subyacido\u003c/td>\u003ctd class=\"future\">\u003cspan class=\"pattern\">habrá\u003c/span> subyacido\u003c/td>\u003ctd class=\"conditional\">\u003cspan class=\"pattern\">habría\u003c/span> subyacido\u003c/td>\u003ctd class=\"compound-sub group-start\">\u003cspan class=\"pattern\">haya\u003c/span> subyacido\u003c/td>\u003ctd class=\"compound-sub\">\u003cspan class=\"pattern\">hubiera\u003c/span> subyacido\u003c/td>\u003ctd class=\"compound-sub\">\u003cspan class=\"pattern\">hubiese\u003c/span> subyacido\u003c/td>\u003c/tr>\u003ctr>\u003cth scope=\"row\">nosotros/as\u003c/th>\u003ctd class=\"present\">\u003cspan class=\"pattern\">he\u003c/span>mos subyacido\u003c/td>\u003ctd class=\"imperfect\">\u003cspan class=\"pattern\">había\u003c/span>mos subyacido\u003c/td>\u003ctd class=\"future\">\u003cspan class=\"pattern\">habre\u003c/span>mos subyacido\u003c/td>\u003ctd class=\"conditional\">\u003cspan class=\"pattern\">habría\u003c/span>mos subyacido\u003c/td>\u003ctd class=\"compound-sub group-start\">\u003cspan class=\"pattern\">haya\u003c/span>mos subyacido\u003c/td>\u003ctd class=\"compound-sub\">\u003cspan class=\"pattern\">hubie\u003cspan class=\"shift-accent\">&#x301;\u003c/span>ra\u003c/span>mos subyacido\u003c/td>\u003ctd class=\"compound-sub\">\u003cspan class=\"pattern\">hubie\u003cspan class=\"shift-accent\">&#x301;\u003c/span>se\u003c/span>mos subyacido\u003c/td>\u003c/tr>\u003ctr>\u003cth scope=\"row\">ellos/ellas/Uds.\u003c/th>\u003ctd class=\"present\">\u003cspan class=\"pattern\">ha\u003c/span>n subyacido\u003c/td>\u003ctd class=\"imperfect\">\u003cspan class=\"pattern\">había\u003c/span>n subyacido\u003c/td>\u003ctd class=\"future\">\u003cspan class=\"pattern\">habrá\u003c/span>n subyacido\u003c/td>\u003ctd class=\"conditional\">\u003cspan class=\"pattern\">habría\u003c/span>n subyacido\u003c/td>\u003ctd class=\"compound-sub group-start\">\u003cspan class=\"pattern\">haya\u003c/span>n subyacido\u003c/td>\u003ctd class=\"compound-sub\">\u003cspan class=\"pattern\">hubiera\u003c/span>n subyacido\u003c/td>\u003ctd class=\"compound-sub\">\u003cspan class=\"pattern\">hubiese\u003c/span>n subyacido\u003c/td>\u003c/tr>","command":"\u003ctr>\u003cth scope=\"row\">tú\u003c/th>\u003ctd class=\"affirmative\">\u003cspan class=\"form-variant\">subyac\u003cspan class=\"pattern\">e\u003c/span>\u003c/span>\u003cspan class=\"variant-sep\"> / \u003c/span>\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante de imperativo subyaz\" title=\"variante de imperativo subyaz\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>subyaz\u003c/span>\u003c/td>\u003c/tr>\u003ctr>\u003cth scope=\"row\">usted\u003c/th>\u003ctd class=\"affirmative\">\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante subyazc-\" title=\"variante subyazc-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>subyazc\u003cspan class=\"pattern\">a\u003c/span>\u003c/span>\u003cspan class=\"variant-sep\"> / \u003c/span>\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante subyazg-\" title=\"variante subyazg-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>subyazg\u003cspan class=\"pattern\">a\u003c/span>\u003c/span>\u003cspan class=\"variant-sep\"> / \u003c/span>\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante subyag-\" title=\"variante subyag-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>subyag\u003cspan class=\"pattern\">a\u003c/span>\u003c/span>\u003c/td>\u003c/tr>\u003ctr>\u003cth scope=\"row\">nosotros/as\u003c/th>\u003ctd class=\"affirmative\">\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante subyazc-\" title=\"variante subyazc-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>subyazc\u003cspan class=\"pattern\">a\u003c/span>mos\u003c/span>\u003cspan class=\"variant-sep\"> / \u003c/span>\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante subyazg-\" title=\"variante subyazg-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>subyazg\u003cspan class=\"pattern\">a\u003c/span>mos\u003c/span>\u003cspan class=\"variant-sep\"> / \u003c/span>\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante subyag-\" title=\"variante subyag-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>subyag\u003cspan class=\"pattern\">a\u003c/span>mos\u003c/span>\u003c/td>\u003c/tr>\u003ctr>\u003cth scope=\"row\">ustedes\u003c/th>\u003ctd class=\"affirmative\">\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante subyazc-\" title=\"variante subyazc-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>subyazc\u003cspan class=\"pattern\">a\u003c/span>n\u003c/span>\u003cspan class=\"variant-sep\"> / \u003c/span>\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante subyazg-\" title=\"variante subyazg-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>subyazg\u003cspan class=\"pattern\">a\u003c/span>n\u003c/span>\u003cspan class=\"variant-sep\"> / \u003c/span>\u003cspan class=\"form-variant is-irregular\" data-reason=\"variante subyag-\" title=\"variante subyag-\">\u003cspan class=\"sr-only\">forma irregular: \u003c/span>subyag\u003cspan class=\"pattern\">a\u003c/span>n\u003c/span>\u003c/td>\u003c/tr>","nonfinite":"\u003ctr>\u003cth scope=\"row\">Infinitivo\u003c/th>\u003ctd class=\"nonfinite\">subyacer\u003c/td>\u003c/tr>\u003ctr>\u003cth scope=\"row\">Gerundio\u003c/th>\u003ctd class=\"nonfinite\">subyaciendo\u003c/td>\u003c/tr>\u003ctr>\u003cth scope=\"row\">Participio\u003c/th>\u003ctd class=\"nonfinite\">subyacido\u003c/td>\u003c/tr>\u003ctr>\u003cth scope=\"row\">Infinitivo compuesto\u003c/th>\u003ctd class=\"nonfinite\">haber subyacido\u003c/td>\u003c/tr>\u003ctr>\u003cth scope=\"row\">Gerundio compuesto\u003c/th>\u003ctd class=\"nonfinite\">habiendo subyacido\u003c/td>\u003c/tr>","rare":"\u003ctr>\u003cth scope=\"row\">yo\u003c/th>\u003ctd class=\"rare\">\u003cspan class=\"pattern\">hube\u003c/span> subyacido\u003c/td>\u003ctd class=\"rare group-start\">subyac\u003cspan class=\"pattern\">iere\u003c/span>\u003c/td>\u003ctd class=\"rare\">\u003cspan class=\"pattern\">hubiere\u003c/span> subyacido\u003c/td>\u003c/tr>\u003ctr>\u003cth scope=\"row\">tú\u003c/th>\u003ctd class=\"rare\">\u003cspan class=\"pattern\">hubi\u003c/span>ste subyacido\u003c/td>\u003ctd class=\"rare group-start\">subyac\u003cspan class=\"pattern\">iere\u003c/span>s\u003c/td>\u003ctd class=\"rare\">\u003cspan class=\"pattern\">hubiere\u003c/span>s subyacido\u003c/td>\u003c/tr>\u003ctr>\u003cth scope=\"row\">él/ella/Ud.\u003c/th>\u003ctd class=\"rare\">\u003cspan class=\"pattern\">hubo\u003c/span> subyacido\u003c/td>\u003ctd class=\"rare group-start\">subyac\u003cspan class=\"pattern\">iere\u003c/span>\u003c/td>\u003ctd class=\"rare\">\u003cspan class=\"pattern\">hubiere\u003c/span> subyacido\u003c/td>\u003c/tr>\u003ctr>\u003cth scope=\"row\">nosotros/as\u003c/th>\u003ctd class=\"rare\">\u003cspan class=\"pattern\">hubi\u003c/span>mos subyacido\u003c/td>\u003ctd class=\"rare group-start\">subyac\u003cspan class=\"pattern\">ie\u003cspan class=\"shift-accent\">&#x301;\u003c/span>re\u003c/span>mos\u003c/td>\u003ctd class=\"rare\">\u003cspan class=\"pattern\">hubie\u003cspan class=\"shift-accent\">&#x301;\u003c/span>re\u003c/span>mos subyacido\u003c/td>\u003c/tr>\u003ctr>\u003cth scope=\"row\">ellos/ellas/Uds.\u003c/th>\u003ctd class=\"rare\">\u003cspan class=\"pattern\">hubie\u003c/span>ron subyacido\u003c/td>\u003ctd class=\"rare group-start\">subyac\u003cspan class=\"pattern\">iere\u003c/span>n\u003c/td>\u003ctd class=\"rare\">\u003cspan class=\"pattern\">hubiere\u003c/span>n subyacido\u003c/td>\u003c/tr>"},"labels":{"indicative":"Conjugación de subyacer en indicativo","subjunctive":"Conjugación de subyacer en subjuntivo","compound":"Tiempos compuestos de subyacer","command":"Imperativo afirmativo de subyacer","nonfinite":"Formas no personales de subyacer","rare":"Formas raras de subyacer"}}}}</script>
+  <script>
+    (() => {
+      const dataNode = document.querySelector('#family-data');
+      const buttons = [...document.querySelectorAll('[data-member-id]')];
+      if (!dataNode || !buttons.length) return;
+      const data = JSON.parse(dataNode.textContent);
+      const bySlot = name => document.querySelector(`[data-slot="${name}"]`);
+      const selectMember = member => {
+        const view = data.members[member];
+        if (!view) return;
+        bySlot('lemma').textContent = view.lemma;
+        bySlot('signature').textContent = view.signature;
+        bySlot('indicative-formula').textContent = view.indicative_formula;
+        bySlot('compound-formula').textContent = view.compound_formula;
+        bySlot('nonfinite-header').textContent = view.nonfinite_header;
+        Object.entries(view.headers).forEach(([key, value]) => {
+          document.querySelector(`[data-header="${key}"]`).textContent = value;
+        });
+        Object.entries(view.bodies).forEach(([key, value]) => {
+          document.querySelector(`[data-body="${key}"]`).innerHTML = value;
+        });
+        Object.entries(view.labels).forEach(([key, value]) => {
+          document.querySelector(`[data-table="${key}"]`).setAttribute('aria-label', value);
+        });
+        const memberNote = bySlot('member-note');
+        memberNote.textContent = view.member_note;
+        memberNote.hidden = !view.member_note;
+        document.title = view.title;
+        document.querySelector('meta[name="description"]').setAttribute('content', view.description);
+        buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.memberId === member)));
+        document.querySelector('[data-member-live]').textContent = `Mostrando la conjugación de ${view.lemma}`;
+      };
+      buttons.forEach(button => button.addEventListener('click', () => selectMember(button.dataset.memberId)));
+    })();
+  </script>
+
+
+</body>
+</html>

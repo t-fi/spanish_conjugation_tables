@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Terminaciones regulares del español</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #172033;
+      --muted: #5c677d;
+      --line: #cbd3df;
+      --group-line: #52627b;
+      --paper: #ffffff;
+      --page: #f3f6fa;
+      --row: #f7f9fc;
+      --row-alt: #eef2f7;
+
+      --present: #e7f5ee;
+      --present-strong: #badfcb;
+      --present-accent: #0b7a4e;
+      --preterite: #eaf0fb;
+      --preterite-strong: #c5d4ee;
+      --preterite-accent: #176fb3;
+      --imperfect: #fff1df;
+      --imperfect-strong: #efd0a8;
+      --imperfect-accent: #9a5d16;
+      --future: #eeeafd;
+      --future-strong: #d4c9f4;
+      --future-accent: #685bc5;
+      --conditional: #f8e9f2;
+      --conditional-strong: #e9c5d9;
+      --conditional-accent: #a34e75;
+
+      --subjunctive: #f3eafb;
+      --subjunctive-strong: #dfc8ef;
+      --subjunctive-accent: #8d4fb0;
+      --compound-ind: #e5f1f7;
+      --compound-ind-strong: #bdd9e7;
+      --compound-ind-accent: #28728f;
+      --compound-sub: #f3eafb;
+      --compound-sub-strong: #dfc8ef;
+      --affirmative: #e5f4eb;
+      --affirmative-strong: #bddfc9;
+      --affirmative-accent: #0b7a49;
+      --nonfinite: #f0f2f5;
+      --nonfinite-strong: #d7dce3;
+      --nonfinite-accent: #4d586a;
+      --rare: #f3f1ed;
+      --rare-strong: #ded8cf;
+      --rare-accent: #80664c;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: clamp(0.5rem, 2vw, 1.5rem);
+      background: var(--page);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+    }
+
+    main {
+      width: min(100%, 1440px);
+      margin-inline: auto;
+      padding: clamp(0.75rem, 1.8vw, 1.4rem);
+      background: var(--paper);
+      border: 1px solid #e1e6ee;
+      border-radius: 14px;
+      box-shadow: 0 12px 34px rgb(24 39 75 / 9%);
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(1.02rem, 1.6vw, 1.22rem);
+      line-height: 1.2;
+      letter-spacing: -0.015em;
+    }
+
+    section {
+      margin-top: clamp(1.05rem, 2vw, 1.6rem);
+      scroll-margin-top: 1rem;
+    }
+
+    main > section:first-of-type { margin-top: 0; }
+
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.65rem;
+      margin-bottom: 0.48rem;
+    }
+
+    .formula {
+      margin: 0;
+      color: var(--muted);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.75rem;
+      font-weight: 650;
+      text-align: right;
+    }
+
+    .table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      border-radius: 8px;
+      scrollbar-color: #9ba7b8 transparent;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .indicative-table { min-width: 1020px; }
+    .subjunctive-table { min-width: 790px; }
+    .compound-table { min-width: 1080px; }
+    .command-table { min-width: 420px; }
+    .nonfinite-table { min-width: 520px; }
+    .rare-table { min-width: 710px; }
+
+    th,
+    td {
+      padding: 0.44rem 0.52rem;
+      border: 1px solid var(--line);
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    thead th {
+      font-weight: 760;
+      letter-spacing: 0.005em;
+      white-space: normal;
+    }
+
+    thead tr:first-child th {
+      padding-block: 0.55rem;
+      font-size: 0.92rem;
+    }
+
+    thead tr:nth-child(2) th {
+      color: #46536a;
+      font-size: 0.74rem;
+      line-height: 1.2;
+    }
+
+    tbody th {
+      position: sticky;
+      left: 0;
+      z-index: 1;
+      background: var(--row);
+      text-align: left;
+      font-size: 0.82rem;
+      box-shadow: 2px 0 0 rgb(82 98 123 / 10%);
+    }
+
+    tbody tr:nth-child(even) th { background: var(--row-alt); }
+
+    tbody td {
+      padding-left: 0.7rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.88rem;
+      font-weight: 650;
+      text-align: left;
+    }
+
+    .pattern {
+      color: var(--accent, var(--ink));
+      font-weight: 800;
+      text-decoration-line: underline;
+      text-decoration-thickness: 0.12em;
+      text-underline-offset: 0.16em;
+      text-decoration-skip-ink: none;
+    }
+
+    .shift-accent { color: var(--ink); }
+
+    .stem-key {
+      display: block;
+      margin-top: 0.15rem;
+      color: var(--accent, #34425a);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.67rem;
+      font-weight: 750;
+      line-height: 1.1;
+    }
+
+    .person {
+      position: sticky;
+      left: 0;
+      z-index: 3;
+      min-width: 135px;
+      background: #e8edf4;
+      box-shadow: 2px 0 0 rgb(82 98 123 / 12%);
+    }
+
+    .indicative-table,
+    .compound-table {
+      table-layout: fixed;
+    }
+
+    .indicative-table .person,
+    .compound-table .person {
+      width: 150px;
+    }
+
+    .group-start { border-left: 3px solid var(--group-line); }
+
+    .present { --accent: var(--present-accent); background: var(--present); }
+    .present.strong { background: var(--present-strong); }
+    .preterite { --accent: var(--preterite-accent); background: var(--preterite); }
+    .preterite.strong { background: var(--preterite-strong); }
+    .imperfect { --accent: var(--imperfect-accent); background: var(--imperfect); }
+    .imperfect.strong { background: var(--imperfect-strong); }
+    .future { --accent: var(--future-accent); background: var(--future); }
+    .future.strong { background: var(--future-strong); }
+    .conditional { --accent: var(--conditional-accent); background: var(--conditional); }
+    .conditional.strong { background: var(--conditional-strong); }
+
+    .subjunctive { --accent: var(--subjunctive-accent); background: var(--subjunctive); }
+    .subjunctive.strong { background: var(--subjunctive-strong); }
+    .compound-ind { --accent: var(--compound-ind-accent); background: var(--compound-ind); }
+    .compound-ind.strong { background: var(--compound-ind-strong); }
+    .compound-sub { --accent: var(--subjunctive-accent); background: var(--compound-sub); }
+    .compound-sub.strong { background: var(--compound-sub-strong); }
+    .affirmative { --accent: var(--affirmative-accent); background: var(--affirmative); }
+    .affirmative.strong { background: var(--affirmative-strong); }
+    .nonfinite { --accent: var(--nonfinite-accent); background: var(--nonfinite); }
+    .nonfinite.strong { background: var(--nonfinite-strong); }
+    .rare { --accent: var(--rare-accent); background: var(--rare); }
+    .rare.strong { background: var(--rare-strong); }
+
+    .legend { --accent: var(--group-line); }
+
+    .paired-tables {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+      gap: 0.8rem;
+      align-items: start;
+    }
+
+    .table-card { min-width: 0; }
+
+    .table-card h2 { margin-bottom: 0.48rem; }
+
+    .command-table .person { min-width: 108px; }
+
+    .nonfinite-table .person { min-width: 155px; }
+
+    .command-rule {
+      --accent: var(--subjunctive-accent);
+      margin: 0.38rem 0 0;
+      padding: 0.38rem 0.55rem;
+      border-left: 3px solid var(--subjunctive-accent);
+      background: var(--subjunctive);
+      color: #44345f;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.73rem;
+      line-height: 1.25;
+    }
+
+    .rare-section {
+      padding-top: 0.8rem;
+      border-top: 1px dashed #cdd3dc;
+    }
+
+    .rare-section h2 { color: #5f5b54; }
+
+    @media (max-width: 980px) {
+      .paired-tables { grid-template-columns: 1fr; }
+      .section-head { align-items: flex-start; flex-direction: column; gap: 0.3rem; }
+      .formula { text-align: left; }
+    }
+
+    @media print {
+      @page { size: landscape; margin: 10mm; }
+      * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      body { min-height: auto; padding: 0; background: white; }
+      main { width: 100%; padding: 0; border: 0; box-shadow: none; }
+      section { break-inside: avoid; margin-top: 5mm; }
+      main > section:first-of-type { margin-top: 0; }
+      .table-wrap { overflow: visible; }
+      table { min-width: 0 !important; }
+      th, td { padding: 4px 5px; }
+      tbody th, .person { position: static; box-shadow: none; }
+      .paired-tables { grid-template-columns: 1fr; gap: 5mm; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section id="indicativo">
+      <div class="section-head">
+        <h2>Indicativo · tiempos simples</h2>
+        <p class="formula legend"><span class="pattern">subrayado</span> = núcleo repetido · color = tiempo</p>
+      </div>
+      <div class="table-wrap">
+        <table class="indicative-table" aria-label="Terminaciones regulares de los tiempos simples del indicativo">
+          <thead>
+            <tr>
+              <th class="person" rowspan="2" scope="col">Persona</th>
+              <th class="present strong" colspan="3" scope="colgroup">Presente</th>
+              <th class="preterite strong group-start" colspan="2" scope="colgroup">Pretérito</th>
+              <th class="imperfect strong group-start" colspan="2" scope="colgroup">Imperfecto</th>
+              <th class="future strong group-start" scope="colgroup">Futuro</th>
+              <th class="conditional strong group-start" scope="colgroup">Condicional</th>
+            </tr>
+            <tr>
+              <th class="present" scope="col">-AR<span class="stem-key"><span class="pattern">a</span></span></th>
+              <th class="present" scope="col">-ER<span class="stem-key"><span class="pattern">e</span></span></th>
+              <th class="present" scope="col">-IR<span class="stem-key"><span class="pattern">e / i</span></span></th>
+              <th class="preterite group-start" scope="col">-AR<span class="stem-key"><span class="pattern">a</span></span></th>
+              <th class="preterite" scope="col">-ER / -IR<span class="stem-key"><span class="pattern">i</span></span></th>
+              <th class="imperfect group-start" scope="col">-AR<span class="stem-key"><span class="pattern">aba</span></span></th>
+              <th class="imperfect" scope="col">-ER / -IR<span class="stem-key"><span class="pattern">ía</span></span></th>
+              <th class="future group-start" scope="col">Todos<span class="stem-key"><span class="pattern">infinitivo completo</span> +</span></th>
+              <th class="conditional group-start" scope="col">Todos<span class="stem-key"><span class="pattern">infinitivo completo</span> + <span class="pattern">ía</span></span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">yo</th>
+              <td class="present">-o</td><td class="present">-o</td><td class="present">-o</td>
+              <td class="preterite group-start">-é</td><td class="preterite">-<span class="pattern">í</span></td>
+              <td class="imperfect group-start">-<span class="pattern">aba</span></td><td class="imperfect">-<span class="pattern">ía</span></td>
+              <td class="future group-start">-é</td><td class="conditional group-start">-<span class="pattern">ía</span></td>
+            </tr>
+            <tr>
+              <th scope="row">tú</th>
+              <td class="present">-<span class="pattern">a</span>s</td><td class="present">-<span class="pattern">e</span>s</td><td class="present">-<span class="pattern">e</span>s</td>
+              <td class="preterite group-start">-<span class="pattern">a</span>ste</td><td class="preterite">-<span class="pattern">i</span>ste</td>
+              <td class="imperfect group-start">-<span class="pattern">aba</span>s</td><td class="imperfect">-<span class="pattern">ía</span>s</td>
+              <td class="future group-start">-ás</td><td class="conditional group-start">-<span class="pattern">ía</span>s</td>
+            </tr>
+            <tr>
+              <th scope="row">él/ella/Ud.</th>
+              <td class="present">-<span class="pattern">a</span></td><td class="present">-<span class="pattern">e</span></td><td class="present">-<span class="pattern">e</span></td>
+              <td class="preterite group-start">-ó</td><td class="preterite">-<span class="pattern">i</span>ó</td>
+              <td class="imperfect group-start">-<span class="pattern">aba</span></td><td class="imperfect">-<span class="pattern">ía</span></td>
+              <td class="future group-start">-á</td><td class="conditional group-start">-<span class="pattern">ía</span></td>
+            </tr>
+            <tr>
+              <th scope="row">nosotros/as</th>
+              <td class="present">-<span class="pattern">a</span>mos</td><td class="present">-<span class="pattern">e</span>mos</td><td class="present">-<span class="pattern">i</span>mos</td>
+              <td class="preterite group-start">-<span class="pattern">a</span>mos</td><td class="preterite">-<span class="pattern">i</span>mos</td>
+              <td class="imperfect group-start">-<span class="pattern">a<span class="shift-accent">&#x301;</span>ba</span>mos</td><td class="imperfect">-<span class="pattern">ía</span>mos</td>
+              <td class="future group-start">-emos</td><td class="conditional group-start">-<span class="pattern">ía</span>mos</td>
+            </tr>
+            <tr>
+              <th scope="row">ellos/ellas/Uds.</th>
+              <td class="present">-<span class="pattern">a</span>n</td><td class="present">-<span class="pattern">e</span>n</td><td class="present">-<span class="pattern">e</span>n</td>
+              <td class="preterite group-start">-<span class="pattern">a</span>ron</td><td class="preterite">-<span class="pattern">i</span>eron</td>
+              <td class="imperfect group-start">-<span class="pattern">aba</span>n</td><td class="imperfect">-<span class="pattern">ía</span>n</td>
+              <td class="future group-start">-án</td><td class="conditional group-start">-<span class="pattern">ía</span>n</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="subjuntivo">
+      <div class="section-head">
+        <h2>Subjuntivo · tiempos simples</h2>
+      </div>
+      <div class="table-wrap">
+        <table class="subjunctive-table" aria-label="Terminaciones regulares de los tiempos simples del subjuntivo">
+          <thead>
+            <tr>
+              <th class="person" rowspan="2" scope="col">Persona</th>
+              <th class="subjunctive strong" colspan="2" scope="colgroup">Presente</th>
+              <th class="subjunctive strong group-start" colspan="2" scope="colgroup">Imperfecto · -ra</th>
+              <th class="subjunctive strong group-start" colspan="2" scope="colgroup">Imperfecto · -se</th>
+            </tr>
+            <tr>
+              <th class="subjunctive" scope="col">-AR<span class="stem-key"><span class="pattern">e</span></span></th>
+              <th class="subjunctive" scope="col">-ER / -IR<span class="stem-key"><span class="pattern">a</span></span></th>
+              <th class="subjunctive group-start" scope="col">-AR<span class="stem-key"><span class="pattern">ara</span></span></th>
+              <th class="subjunctive" scope="col">-ER / -IR<span class="stem-key"><span class="pattern">iera</span></span></th>
+              <th class="subjunctive group-start" scope="col">-AR<span class="stem-key"><span class="pattern">ase</span></span></th>
+              <th class="subjunctive" scope="col">-ER / -IR<span class="stem-key"><span class="pattern">iese</span></span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">yo</th>
+              <td class="subjunctive">-<span class="pattern">e</span></td><td class="subjunctive">-<span class="pattern">a</span></td>
+              <td class="subjunctive group-start">-<span class="pattern">ara</span></td><td class="subjunctive">-<span class="pattern">iera</span></td>
+              <td class="subjunctive group-start">-<span class="pattern">ase</span></td><td class="subjunctive">-<span class="pattern">iese</span></td>
+            </tr>
+            <tr>
+              <th scope="row">tú</th>
+              <td class="subjunctive">-<span class="pattern">e</span>s</td><td class="subjunctive">-<span class="pattern">a</span>s</td>
+              <td class="subjunctive group-start">-<span class="pattern">ara</span>s</td><td class="subjunctive">-<span class="pattern">iera</span>s</td>
+              <td class="subjunctive group-start">-<span class="pattern">ase</span>s</td><td class="subjunctive">-<span class="pattern">iese</span>s</td>
+            </tr>
+            <tr>
+              <th scope="row">él/ella/Ud.</th>
+              <td class="subjunctive">-<span class="pattern">e</span></td><td class="subjunctive">-<span class="pattern">a</span></td>
+              <td class="subjunctive group-start">-<span class="pattern">ara</span></td><td class="subjunctive">-<span class="pattern">iera</span></td>
+              <td class="subjunctive group-start">-<span class="pattern">ase</span></td><td class="subjunctive">-<span class="pattern">iese</span></td>
+            </tr>
+            <tr>
+              <th scope="row">nosotros/as</th>
+              <td class="subjunctive">-<span class="pattern">e</span>mos</td><td class="subjunctive">-<span class="pattern">a</span>mos</td>
+              <td class="subjunctive group-start">-<span class="pattern">a<span class="shift-accent">&#x301;</span>ra</span>mos</td><td class="subjunctive">-<span class="pattern">ie<span class="shift-accent">&#x301;</span>ra</span>mos</td>
+              <td class="subjunctive group-start">-<span class="pattern">a<span class="shift-accent">&#x301;</span>se</span>mos</td><td class="subjunctive">-<span class="pattern">ie<span class="shift-accent">&#x301;</span>se</span>mos</td>
+            </tr>
+            <tr>
+              <th scope="row">ellos/ellas/Uds.</th>
+              <td class="subjunctive">-<span class="pattern">e</span>n</td><td class="subjunctive">-<span class="pattern">a</span>n</td>
+              <td class="subjunctive group-start">-<span class="pattern">ara</span>n</td><td class="subjunctive">-<span class="pattern">iera</span>n</td>
+              <td class="subjunctive group-start">-<span class="pattern">ase</span>n</td><td class="subjunctive">-<span class="pattern">iese</span>n</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="compuestos">
+      <div class="section-head">
+        <h2>Tiempos compuestos</h2>
+        <p class="formula">haber + participio (-ado / -ido)</p>
+      </div>
+      <div class="table-wrap">
+        <table class="compound-table" aria-label="Formas de haber para los tiempos compuestos regulares">
+          <thead>
+            <tr>
+              <th class="person" rowspan="2" scope="col">Persona</th>
+              <th class="compound-ind strong" colspan="4" scope="colgroup">Indicativo</th>
+              <th class="compound-sub strong group-start" colspan="3" scope="colgroup">Subjuntivo</th>
+            </tr>
+            <tr>
+              <th class="present" scope="col">Pretérito perfecto<span class="stem-key"><span class="pattern">he / ha</span></span></th>
+              <th class="imperfect" scope="col">Pluscuamperfecto<span class="stem-key"><span class="pattern">había</span></span></th>
+              <th class="future" scope="col">Futuro perfecto<span class="stem-key"><span class="pattern">habré / habrá / habre</span></span></th>
+              <th class="conditional" scope="col">Condicional perfecto<span class="stem-key"><span class="pattern">habría</span></span></th>
+              <th class="compound-sub group-start" scope="col">Pretérito perfecto<span class="stem-key"><span class="pattern">haya</span></span></th>
+              <th class="compound-sub" scope="col">Pluscuamperfecto · -ra<span class="stem-key"><span class="pattern">hubiera</span></span></th>
+              <th class="compound-sub" scope="col">Pluscuamperfecto · -se<span class="stem-key"><span class="pattern">hubiese</span></span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">yo</th>
+              <td class="present"><span class="pattern">he</span></td><td class="imperfect"><span class="pattern">había</span></td>
+              <td class="future"><span class="pattern">habré</span></td><td class="conditional"><span class="pattern">habría</span></td>
+              <td class="compound-sub group-start"><span class="pattern">haya</span></td><td class="compound-sub"><span class="pattern">hubiera</span></td><td class="compound-sub"><span class="pattern">hubiese</span></td>
+            </tr>
+            <tr>
+              <th scope="row">tú</th>
+              <td class="present"><span class="pattern">ha</span>s</td><td class="imperfect"><span class="pattern">había</span>s</td>
+              <td class="future"><span class="pattern">habrá</span>s</td><td class="conditional"><span class="pattern">habría</span>s</td>
+              <td class="compound-sub group-start"><span class="pattern">haya</span>s</td><td class="compound-sub"><span class="pattern">hubiera</span>s</td><td class="compound-sub"><span class="pattern">hubiese</span>s</td>
+            </tr>
+            <tr>
+              <th scope="row">él/ella/Ud.</th>
+              <td class="present"><span class="pattern">ha</span></td><td class="imperfect"><span class="pattern">había</span></td>
+              <td class="future"><span class="pattern">habrá</span></td><td class="conditional"><span class="pattern">habría</span></td>
+              <td class="compound-sub group-start"><span class="pattern">haya</span></td><td class="compound-sub"><span class="pattern">hubiera</span></td><td class="compound-sub"><span class="pattern">hubiese</span></td>
+            </tr>
+            <tr>
+              <th scope="row">nosotros/as</th>
+              <td class="present"><span class="pattern">he</span>mos</td><td class="imperfect"><span class="pattern">había</span>mos</td>
+              <td class="future"><span class="pattern">habre</span>mos</td><td class="conditional"><span class="pattern">habría</span>mos</td>
+              <td class="compound-sub group-start"><span class="pattern">haya</span>mos</td><td class="compound-sub"><span class="pattern">hubie<span class="shift-accent">&#x301;</span>ra</span>mos</td><td class="compound-sub"><span class="pattern">hubie<span class="shift-accent">&#x301;</span>se</span>mos</td>
+            </tr>
+            <tr>
+              <th scope="row">ellos/ellas/Uds.</th>
+              <td class="present"><span class="pattern">ha</span>n</td><td class="imperfect"><span class="pattern">había</span>n</td>
+              <td class="future"><span class="pattern">habrá</span>n</td><td class="conditional"><span class="pattern">habría</span>n</td>
+              <td class="compound-sub group-start"><span class="pattern">haya</span>n</td><td class="compound-sub"><span class="pattern">hubiera</span>n</td><td class="compound-sub"><span class="pattern">hubiese</span>n</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="paired-tables" aria-label="Imperativo y formas no personales">
+      <div class="table-card" id="imperativo">
+        <h2>Imperativo</h2>
+        <div class="table-wrap">
+          <table class="command-table" aria-label="Terminaciones regulares del imperativo">
+            <thead>
+              <tr>
+                <th class="person" rowspan="2" scope="col">Persona</th>
+                <th class="affirmative strong" colspan="2" scope="colgroup">Afirmativo</th>
+              </tr>
+              <tr>
+                <th class="affirmative" scope="col">-AR<span class="stem-key"><span class="pattern">a / e</span></span></th>
+                <th class="affirmative" scope="col">-ER / -IR<span class="stem-key"><span class="pattern">e / a</span></span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">tú</th>
+                <td class="affirmative">-<span class="pattern">a</span></td><td class="affirmative">-<span class="pattern">e</span></td>
+              </tr>
+              <tr>
+                <th scope="row">usted</th>
+                <td class="affirmative">-<span class="pattern">e</span></td><td class="affirmative">-<span class="pattern">a</span></td>
+              </tr>
+              <tr>
+                <th scope="row">nosotros/as</th>
+                <td class="affirmative">-<span class="pattern">e</span>mos</td><td class="affirmative">-<span class="pattern">a</span>mos</td>
+              </tr>
+              <tr>
+                <th scope="row">ustedes</th>
+                <td class="affirmative">-<span class="pattern">e</span>n</td><td class="affirmative">-<span class="pattern">a</span>n</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="command-rule"><strong>Negativo:</strong> no + <strong>presente de subjuntivo</strong></p>
+      </div>
+
+      <div class="table-card" id="no-personales">
+        <h2>Formas no personales</h2>
+        <div class="table-wrap">
+          <table class="nonfinite-table" aria-label="Terminaciones regulares de las formas no personales">
+            <thead>
+              <tr>
+                <th class="person" scope="col">Forma</th>
+                <th class="nonfinite strong" scope="col">-AR<span class="stem-key"><span class="pattern">a</span></span></th>
+                <th class="nonfinite strong" scope="col">-ER / -IR<span class="stem-key"><span class="pattern">e / i</span></span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Infinitivo</th>
+                <td class="nonfinite">-<span class="pattern">a</span>r</td><td class="nonfinite">-<span class="pattern">e</span>r / -<span class="pattern">i</span>r</td>
+              </tr>
+              <tr>
+                <th scope="row">Gerundio</th>
+                <td class="nonfinite">-<span class="pattern">a</span>ndo</td><td class="nonfinite">-<span class="pattern">i</span>endo</td>
+              </tr>
+              <tr>
+                <th scope="row">Participio</th>
+                <td class="nonfinite">-<span class="pattern">a</span>do</td><td class="nonfinite">-<span class="pattern">i</span>do</td>
+              </tr>
+              <tr>
+                <th scope="row">Infinitivo compuesto</th>
+                <td class="nonfinite" colspan="2">haber + participio (-<span class="pattern">a</span>do / -<span class="pattern">i</span>do)</td>
+              </tr>
+              <tr>
+                <th scope="row">Gerundio compuesto</th>
+                <td class="nonfinite" colspan="2">habiendo + participio (-<span class="pattern">a</span>do / -<span class="pattern">i</span>do)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="rare-section" id="formas-raras">
+      <div class="section-head">
+        <h2>Formas raras o históricas</h2>
+        <p class="formula">compuestos: haber + participio (-ado / -ido)</p>
+      </div>
+      <div class="table-wrap">
+        <table class="rare-table" aria-label="Terminaciones regulares de formas raras o históricas">
+          <thead>
+            <tr>
+              <th class="person" rowspan="2" scope="col">Persona</th>
+              <th class="rare strong" scope="colgroup">Indicativo</th>
+              <th class="rare strong group-start" colspan="3" scope="colgroup">Subjuntivo</th>
+            </tr>
+            <tr>
+              <th class="rare" scope="col">Pretérito anterior · haber<span class="stem-key"><span class="pattern">hube / hubi / hubo / hubie</span></span></th>
+              <th class="rare group-start" scope="col">Futuro · -AR<span class="stem-key"><span class="pattern">are</span></span></th>
+              <th class="rare" scope="col">Futuro · -ER / -IR<span class="stem-key"><span class="pattern">iere</span></span></th>
+              <th class="rare" scope="col">Futuro perfecto · haber<span class="stem-key"><span class="pattern">hubiere</span></span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">yo</th>
+              <td class="rare"><span class="pattern">hube</span></td><td class="rare group-start">-<span class="pattern">are</span></td><td class="rare">-<span class="pattern">iere</span></td><td class="rare"><span class="pattern">hubiere</span></td>
+            </tr>
+            <tr>
+              <th scope="row">tú</th>
+              <td class="rare"><span class="pattern">hubi</span>ste</td><td class="rare group-start">-<span class="pattern">are</span>s</td><td class="rare">-<span class="pattern">iere</span>s</td><td class="rare"><span class="pattern">hubiere</span>s</td>
+            </tr>
+            <tr>
+              <th scope="row">él/ella/Ud.</th>
+              <td class="rare"><span class="pattern">hubo</span></td><td class="rare group-start">-<span class="pattern">are</span></td><td class="rare">-<span class="pattern">iere</span></td><td class="rare"><span class="pattern">hubiere</span></td>
+            </tr>
+            <tr>
+              <th scope="row">nosotros/as</th>
+              <td class="rare"><span class="pattern">hubi</span>mos</td><td class="rare group-start">-<span class="pattern">a<span class="shift-accent">&#x301;</span>re</span>mos</td><td class="rare">-<span class="pattern">ie<span class="shift-accent">&#x301;</span>re</span>mos</td><td class="rare"><span class="pattern">hubie<span class="shift-accent">&#x301;</span>re</span>mos</td>
+            </tr>
+            <tr>
+              <th scope="row">ellos/ellas/Uds.</th>
+              <td class="rare"><span class="pattern">hubie</span>ron</td><td class="rare group-start">-<span class="pattern">are</span>n</td><td class="rare">-<span class="pattern">iere</span>n</td><td class="rare"><span class="pattern">hubiere</span>n</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

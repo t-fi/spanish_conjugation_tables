@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Índice de familias de conjugación irregular del español latinoamericano">
+  <title>Familias irregulares del español</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #172033;
+      --muted: #5c677d;
+      --line: #cbd3df;
+      --group-line: #52627b;
+      --paper: #ffffff;
+      --page: #f3f6fa;
+      --row: #f7f9fc;
+      --row-alt: #eef2f7;
+
+      --present: #e7f5ee;
+      --present-strong: #badfcb;
+      --present-accent: #0b7a4e;
+      --preterite: #eaf0fb;
+      --preterite-strong: #c5d4ee;
+      --preterite-accent: #176fb3;
+      --imperfect: #fff1df;
+      --imperfect-strong: #efd0a8;
+      --imperfect-accent: #9a5d16;
+      --future: #eeeafd;
+      --future-strong: #d4c9f4;
+      --future-accent: #685bc5;
+      --conditional: #f8e9f2;
+      --conditional-strong: #e9c5d9;
+      --conditional-accent: #a34e75;
+
+      --subjunctive: #f3eafb;
+      --subjunctive-strong: #dfc8ef;
+      --subjunctive-accent: #8d4fb0;
+      --compound-ind: #e5f1f7;
+      --compound-ind-strong: #bdd9e7;
+      --compound-ind-accent: #28728f;
+      --compound-sub: #f3eafb;
+      --compound-sub-strong: #dfc8ef;
+      --affirmative: #e5f4eb;
+      --affirmative-strong: #bddfc9;
+      --affirmative-accent: #0b7a49;
+      --nonfinite: #f0f2f5;
+      --nonfinite-strong: #d7dce3;
+      --nonfinite-accent: #4d586a;
+      --rare: #f3f1ed;
+      --rare-strong: #ded8cf;
+      --rare-accent: #80664c;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: clamp(0.5rem, 2vw, 1.5rem);
+      background: var(--page);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+    }
+
+    main {
+      width: min(100%, 1440px);
+      margin-inline: auto;
+      padding: clamp(0.75rem, 1.8vw, 1.4rem);
+      background: var(--paper);
+      border: 1px solid #e1e6ee;
+      border-radius: 14px;
+      box-shadow: 0 12px 34px rgb(24 39 75 / 9%);
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(1.02rem, 1.6vw, 1.22rem);
+      line-height: 1.2;
+      letter-spacing: -0.015em;
+    }
+
+    section {
+      margin-top: clamp(1.05rem, 2vw, 1.6rem);
+      scroll-margin-top: 1rem;
+    }
+
+    main > section:first-of-type { margin-top: 0; }
+
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.65rem;
+      margin-bottom: 0.48rem;
+    }
+
+    .formula {
+      margin: 0;
+      color: var(--muted);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.75rem;
+      font-weight: 650;
+      text-align: right;
+    }
+
+    .table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      border-radius: 8px;
+      scrollbar-color: #9ba7b8 transparent;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .indicative-table { min-width: 1020px; }
+    .subjunctive-table { min-width: 790px; }
+    .compound-table { min-width: 1080px; }
+    .command-table { min-width: 420px; }
+    .nonfinite-table { min-width: 520px; }
+    .rare-table { min-width: 710px; }
+
+    th,
+    td {
+      padding: 0.44rem 0.52rem;
+      border: 1px solid var(--line);
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    thead th {
+      font-weight: 760;
+      letter-spacing: 0.005em;
+      white-space: normal;
+    }
+
+    thead tr:first-child th {
+      padding-block: 0.55rem;
+      font-size: 0.92rem;
+    }
+
+    thead tr:nth-child(2) th {
+      color: #46536a;
+      font-size: 0.74rem;
+      line-height: 1.2;
+    }
+
+    tbody th {
+      position: sticky;
+      left: 0;
+      z-index: 1;
+      background: var(--row);
+      text-align: left;
+      font-size: 0.82rem;
+      box-shadow: 2px 0 0 rgb(82 98 123 / 10%);
+    }
+
+    tbody tr:nth-child(even) th { background: var(--row-alt); }
+
+    tbody td {
+      padding-left: 0.7rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.88rem;
+      font-weight: 650;
+      text-align: left;
+    }
+
+    .pattern {
+      color: var(--accent, var(--ink));
+      font-weight: 800;
+      text-decoration-line: underline;
+      text-decoration-thickness: 0.12em;
+      text-underline-offset: 0.16em;
+      text-decoration-skip-ink: none;
+    }
+
+    .shift-accent { color: var(--ink); }
+
+    .stem-key {
+      display: block;
+      margin-top: 0.15rem;
+      color: var(--accent, #34425a);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.67rem;
+      font-weight: 750;
+      line-height: 1.1;
+    }
+
+    .person {
+      position: sticky;
+      left: 0;
+      z-index: 3;
+      min-width: 135px;
+      background: #e8edf4;
+      box-shadow: 2px 0 0 rgb(82 98 123 / 12%);
+    }
+
+    .indicative-table,
+    .compound-table {
+      table-layout: fixed;
+    }
+
+    .indicative-table .person,
+    .compound-table .person {
+      width: 150px;
+    }
+
+    .group-start { border-left: 3px solid var(--group-line); }
+
+    .present { --accent: var(--present-accent); background: var(--present); }
+    .present.strong { background: var(--present-strong); }
+    .preterite { --accent: var(--preterite-accent); background: var(--preterite); }
+    .preterite.strong { background: var(--preterite-strong); }
+    .imperfect { --accent: var(--imperfect-accent); background: var(--imperfect); }
+    .imperfect.strong { background: var(--imperfect-strong); }
+    .future { --accent: var(--future-accent); background: var(--future); }
+    .future.strong { background: var(--future-strong); }
+    .conditional { --accent: var(--conditional-accent); background: var(--conditional); }
+    .conditional.strong { background: var(--conditional-strong); }
+
+    .subjunctive { --accent: var(--subjunctive-accent); background: var(--subjunctive); }
+    .subjunctive.strong { background: var(--subjunctive-strong); }
+    .compound-ind { --accent: var(--compound-ind-accent); background: var(--compound-ind); }
+    .compound-ind.strong { background: var(--compound-ind-strong); }
+    .compound-sub { --accent: var(--subjunctive-accent); background: var(--compound-sub); }
+    .compound-sub.strong { background: var(--compound-sub-strong); }
+    .affirmative { --accent: var(--affirmative-accent); background: var(--affirmative); }
+    .affirmative.strong { background: var(--affirmative-strong); }
+    .nonfinite { --accent: var(--nonfinite-accent); background: var(--nonfinite); }
+    .nonfinite.strong { background: var(--nonfinite-strong); }
+    .rare { --accent: var(--rare-accent); background: var(--rare); }
+    .rare.strong { background: var(--rare-strong); }
+
+    .legend { --accent: var(--group-line); }
+
+    .paired-tables {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+      gap: 0.8rem;
+      align-items: start;
+    }
+
+    .table-card { min-width: 0; }
+
+    .table-card h2 { margin-bottom: 0.48rem; }
+
+    .command-table .person { min-width: 108px; }
+
+    .nonfinite-table .person { min-width: 155px; }
+
+    .command-rule {
+      --accent: var(--subjunctive-accent);
+      margin: 0.38rem 0 0;
+      padding: 0.38rem 0.55rem;
+      border-left: 3px solid var(--subjunctive-accent);
+      background: var(--subjunctive);
+      color: #44345f;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.73rem;
+      line-height: 1.25;
+    }
+
+    .rare-section {
+      padding-top: 0.8rem;
+      border-top: 1px dashed #cdd3dc;
+    }
+
+    .rare-section h2 { color: #5f5b54; }
+
+    @media (max-width: 980px) {
+      .paired-tables { grid-template-columns: 1fr; }
+      .section-head { align-items: flex-start; flex-direction: column; gap: 0.3rem; }
+      .formula { text-align: left; }
+    }
+
+    @media print {
+      @page { size: landscape; margin: 10mm; }
+      * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      body { min-height: auto; padding: 0; background: white; }
+      main { width: 100%; padding: 0; border: 0; box-shadow: none; }
+      section { break-inside: avoid; margin-top: 5mm; }
+      main > section:first-of-type { margin-top: 0; }
+      .table-wrap { overflow: visible; }
+      table { min-width: 0 !important; }
+      th, td { padding: 4px 5px; }
+      tbody th, .person { position: static; box-shadow: none; }
+      .paired-tables { grid-template-columns: 1fr; gap: 5mm; }
+    }
+  
+    main { max-width: 1180px; }
+    .page-head { margin-bottom: 0.75rem; }
+    .topline { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; }
+    .back-link, .source-links a, .family-card a { color: #355c91; text-underline-offset: 0.15em; }
+    .back-link { font-size: 0.78rem; font-weight: 750; text-decoration: none; }
+    .model-number { color: var(--muted); font: 700 0.72rem/1 ui-monospace, monospace; }
+    h1 { margin: 0.34rem 0 0.28rem; font-size: clamp(1.35rem, 2.7vw, 2rem); line-height: 1.06; letter-spacing: -0.03em; }
+    .signature { margin: 0; color: #5c2f42; font: 800 0.84rem/1.35 ui-monospace, monospace; }
+    .scope-note { max-width: 78ch; margin: 0.6rem 0 0; color: var(--muted); font-size: 0.76rem; line-height: 1.45; }
+    .member-list { display: flex; flex-wrap: wrap; gap: 0.28rem; margin: 0.65rem 0 0; padding: 0; list-style: none; }
+    .member-list > li { padding: 0.2rem 0.42rem; border: 1px solid #d5dbe5; border-radius: 999px; background: #f7f9fc; font: 700 0.69rem/1.1 ui-monospace, monospace; }
+    .member-list.is-switcher > li { padding: 0; border: 0; background: transparent; }
+    .member-list button { appearance: none; padding: 0.22rem 0.46rem; border: 1px solid #c8d0dc; border-radius: 999px; color: #3f4c60; background: #f7f9fc; font: inherit; cursor: pointer; }
+    .member-list button:hover { border-color: #8e9caf; background: #eef3f9; }
+    .member-list button[aria-pressed="true"] { border-color: #77364e; color: #fff; background: #77364e; box-shadow: 0 0 0 1px #77364e; }
+    .member-list button:focus-visible { outline: 3px solid #f2b84b; outline-offset: 2px; }
+    .member-status { margin-top: 0.35rem; }
+    .family-note { margin: 0.45rem 0 0; padding: 0.38rem 0.55rem; border-left: 3px solid #8f6172; background: #fbf3f6; color: #5d3b48; font-size: 0.73rem; line-height: 1.35; }
+    .legend-row { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; margin-top: 0.55rem; color: var(--muted); font: 650 0.71rem/1.25 ui-monospace, monospace; }
+    .swatch { display: inline-block; width: 0.9rem; height: 0.7rem; margin-right: 0.22rem; vertical-align: -0.06rem; border-radius: 2px; }
+    .swatch.irregular { background: #ffdedf; border: 1px solid #bd3f4b; }
+    .swatch.orthographic { background: #fff2cf; border: 1px dashed #9b6b12; }
+    .is-irregular { background: #ffdedf !important; box-shadow: inset 0 0 0 1.5px #bd3f4b; }
+    .is-orthographic { background: #fff2cf !important; box-shadow: inset 0 0 0 1.5px #9b6b12; }
+    .form-variant { display: inline-block; padding: 0.05rem 0.18rem; border-radius: 3px; }
+    .variant-sep { color: #778196; font-weight: 500; }
+    .indicative-table { min-width: 760px; }
+    .subjunctive-table { min-width: 600px; table-layout: fixed; }
+    .compound-table { min-width: 1080px; }
+    .command-table { min-width: 310px; }
+    .nonfinite-table { min-width: 390px; }
+    .rare-table { min-width: 670px; table-layout: fixed; }
+    .indicative-table .person, .subjunctive-table .person, .rare-table .person { width: 142px; }
+    .indicative-table tbody td, .subjunctive-table tbody td { text-align: left; }
+    .stem-key { min-height: 1.55em; overflow-wrap: anywhere; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+    .sources { padding-top: 0.8rem; border-top: 1px dashed #cdd3dc; }
+    .sources h2 { color: #4c586c; }
+    .source-links { display: flex; flex-wrap: wrap; gap: 0.35rem 0.8rem; margin: 0; padding: 0; list-style: none; font-size: 0.72rem; }
+    .index-main { max-width: 1160px; }
+    .index-intro { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; align-items: end; }
+    .count-box { padding: 0.55rem 0.72rem; border: 1px solid #d6dce6; border-radius: 8px; background: #f7f9fc; font: 800 0.74rem/1.35 ui-monospace, monospace; text-align: right; }
+    .search-box { width: 100%; margin-top: 0.8rem; padding: 0.56rem 0.7rem; border: 1px solid #aeb9c8; border-radius: 7px; color: var(--ink); background: white; font: 650 0.82rem/1.2 ui-monospace, monospace; }
+    .family-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.52rem; }
+    .family-card { min-width: 0; padding: 0.62rem 0.68rem; border: 1px solid #d7dde6; border-radius: 8px; background: #fafbfd; }
+    .family-card h3 { margin: 0; font-size: 0.86rem; line-height: 1.2; }
+    .family-card p { margin: 0.28rem 0 0; color: var(--muted); font-size: 0.7rem; line-height: 1.3; }
+    .family-card .mini-signature { color: #70445a; font-family: ui-monospace, monospace; font-weight: 750; }
+    .control-note { padding: 0.6rem 0.7rem; border: 1px dashed #a9b4c2; border-radius: 8px; background: #f5f7fa; color: var(--muted); font-size: 0.74rem; line-height: 1.4; }
+    .defective-table { min-width: 820px; }
+    .unavailable { background: #edf0f4 !important; color: #6d7685; text-align: center !important; }
+    @media (forced-colors: active) { .is-irregular, .is-orthographic { outline: 2px solid CanvasText; outline-offset: -3px; } }
+    @media (max-width: 720px) { .index-intro { grid-template-columns: 1fr; } .count-box { text-align: left; } }
+</style>
+</head>
+<body>
+
+  <main class="index-main">
+    <header class="page-head index-intro">
+      <div>
+        <a class="back-link" href="../spanish-conjugation-chart.html">← Terminaciones regulares</a>
+        <h1>Familias irregulares del español</h1>
+        <p class="signature">modelos académicos · español latinoamericano · tú/usted/ustedes</p>
+        <p class="scope-note">Cobertura: todos los modelos no regulares o impredecibles de RAE/ASALE (4–69), las cinco familias cuyo único cambio está en el participio y siete subfamilias separadas porque añaden otro participio o imperativo. Los derivados transparentes se agrupan con su modelo; la lista léxica no se presenta como cerrada porque la prefijación sigue siendo productiva.</p>
+      </div>
+      <div class="count-box">70 páginas de familia<br>303 verbos frecuentes indexados<br>5 personas por paradigma</div>
+    </header>
+    <div class="legend-row"><span><span class="swatch irregular"></span>rojo = irregularidad que se memoriza</span><span><span class="swatch orthographic"></span>ámbar = ajuste predecible</span><span>gris = forma no disponible</span></div>
+    <label class="sr-only" for="family-search">Buscar familia o verbo</label><input class="search-box" id="family-search" type="search" placeholder="Buscar: tener, e→ie, participio…" autocomplete="off">
+    <section><div class="section-head"><h2>Paradigmas especiales</h2><p class="formula">6 familias</p></div><div class="family-grid"><article class="family-card" data-family-card data-search="dar doy · dé · di/die- doy / dé / di- / die- dar"><h3><a href="26-dar.html">dar</a> <span class="model-number">RAE #26</span></h3><p class="mini-signature">doy / dé / di- / die-</p><p>dar</p></article><article class="family-card" data-family-card data-search="estar estoy · esté · estuv- estoy / est- / estuv- estar"><h3><a href="35-estar.html">estar</a> <span class="model-number">RAE #35</span></h3><p class="mini-signature">estoy / est- / estuv-</p><p>estar</p></article><article class="family-card" data-family-card data-search="haber he/hay · hay- · hub- · habr- he/ha- / hay- / hub- / habr- haber"><h3><a href="36-haber.html">haber</a> <span class="model-number">RAE #36</span></h3><p class="mini-signature">he/ha- / hay- / hub- / habr-</p><p>haber</p></article><article class="family-card" data-family-card data-search="ir voy · ib- · fu- · vay- · yendo formas supletivas ir"><h3><a href="38-ir.html">ir</a> <span class="model-number">RAE #38</span></h3><p class="mini-signature">formas supletivas</p><p>ir</p></article><article class="family-card" data-family-card data-search="ser soy · er- · se- · fu- formas supletivas ser"><h3><a href="61-ser.html">ser</a> <span class="model-number">RAE #61</span></h3><p class="mini-signature">formas supletivas</p><p>ser</p></article><article class="family-card" data-family-card data-search="ver ve- · vi- · visto ve- / vi- ver antever entrever prever rever"><h3><a href="68-ver.html">ver</a> <span class="model-number">RAE #68</span></h3><p class="mini-signature">ve- / vi-</p><p>ver · antever · entrever · prever · rever</p></article></div></section><section><div class="section-head"><h2>Familias mixtas</h2><p class="formula">25 familias</p></div><div class="family-grid"><article class="family-card" data-family-card data-search="bendecir bendigo · bendije bendig- / bendij- bendecir maldecir"><h3><a href="17-bendecir.html">bendecir</a> <span class="model-number">RAE #17</span></h3><p class="mini-signature">bendig- / bendij-</p><p>bendecir · maldecir</p></article><article class="family-card" data-family-card data-search="caber quep- · cup- · cabr- quep- / cup- / cabr- caber"><h3><a href="18-caber.html">caber</a> <span class="model-number">RAE #18</span></h3><p class="mini-signature">quep- / cup- / cabr-</p><p>caber</p></article><article class="family-card" data-family-card data-search="conducir -duzc- · -duj- conduzc- / conduj- / conduc- conducir aducir deducir inducir introducir producir reducir reproducir seducir traducir"><h3><a href="23-conducir.html">conducir</a> <span class="model-number">RAE #23</span></h3><p class="mini-signature">conduzc- / conduj- / conduc-</p><p>conducir · aducir · deducir · inducir · introducir · producir…</p></article><article class="family-card" data-family-card data-search="decir dig- · dij- · dir- · dicho dig- / dij- / dir- decir"><h3><a href="27-decir.html">decir</a> <span class="model-number">RAE #27</span></h3><p class="mini-signature">dig- / dij- / dir-</p><p>decir</p></article><article class="family-card" data-family-card data-search="erguir yerg- · irg- yerg- / irg- / ergu- erguir"><h3><a href="33-erguir.html">erguir</a> <span class="model-number">RAE #33</span></h3><p class="mini-signature">yerg- / irg- / ergu-</p><p>erguir</p></article><article class="family-card" data-family-card data-search="hacer hag- · hic-/hiz- · har- · hecho hag- / hic- / hiz- / har- hacer contrahacer deshacer rehacer"><h3><a href="37-hacer.html">hacer</a> <span class="model-number">RAE #37</span></h3><p class="mini-signature">hag- / hic- / hiz- / har-</p><p>hacer · contrahacer · deshacer · rehacer</p></article><article class="family-card" data-family-card data-search="oír oig- · oy- · oí- oig- / oy- / oí- oír desoír entreoír trasoír"><h3><a href="44-oir.html">oír</a> <span class="model-number">RAE #44</span></h3><p class="mini-signature">oig- / oy- / oí-</p><p>oír · desoír · entreoír · trasoír</p></article><article class="family-card" data-family-card data-search="poder pued- · pud- · podr- pued- / pud- / podr- poder"><h3><a href="48-poder.html">poder</a> <span class="model-number">RAE #48</span></h3><p class="mini-signature">pued- / pud- / podr-</p><p>poder</p></article><article class="family-card" data-family-card data-search="poner pong- · pus- · pondr- · puesto pong- / pus- / pondr- poner componer disponer exponer imponer oponer posponer proponer reponer suponer"><h3><a href="49-poner.html">poner</a> <span class="model-number">RAE #49</span></h3><p class="mini-signature">pong- / pus- / pondr-</p><p>poner · componer · disponer · exponer · imponer · oponer…</p></article><article class="family-card" data-family-card data-search="predecir predig- · predij- · futuro doble predig- / predij- / predecir-~predir- predecir condecir contradecir desdecir"><h3><a href="50-predecir.html">predecir</a> <span class="model-number">RAE #50</span></h3><p class="mini-signature">predig- / predij- / predecir-~predir-</p><p>predecir · condecir · contradecir · desdecir</p></article><article class="family-card" data-family-card data-search="querer quier- · quis- · querr- quier- / quis- / querr- querer"><h3><a href="54-querer.html">querer</a> <span class="model-number">RAE #54</span></h3><p class="mini-signature">quier- / quis- / querr-</p><p>querer</p></article><article class="family-card" data-family-card data-search="saber sé · sep- · sup- · sabr- sé / sep- / sup- / sabr- saber resaber"><h3><a href="58-saber.html">saber</a> <span class="model-number">RAE #58</span></h3><p class="mini-signature">sé / sep- / sup- / sabr-</p><p>saber · resaber</p></article><article class="family-card" data-family-card data-search="salir salg- · saldr- · sal salg- / saldr- / sal- salir resalir sobresalir"><h3><a href="59-salir.html">salir</a> <span class="model-number">RAE #59</span></h3><p class="mini-signature">salg- / saldr- / sal-</p><p>salir · resalir · sobresalir</p></article><article class="family-card" data-family-card data-search="sonreír e → i · hiato sonrí- / sonri- / sonre- sonreír reír desleír engreír"><h3><a href="62-sonreir.html">sonreír</a> <span class="model-number">RAE #62</span></h3><p class="mini-signature">sonrí- / sonri- / sonre-</p><p>sonreír · reír · desleír · engreír</p></article><article class="family-card" data-family-card data-search="tener teng- · tien- · tuv- · tendr- · ten teng- / tien- / tuv- / tendr- tener abstener atener contener detener entretener mantener obtener retener sostener"><h3><a href="64-tener.html">tener</a> <span class="model-number">RAE #64</span></h3><p class="mini-signature">teng- / tien- / tuv- / tendr-</p><p>tener · abstener · atener · contener · detener · entretener…</p></article><article class="family-card" data-family-card data-search="traer traig- · traj- · tray- traig- / traj- / tray- traer abstraer atraer contraer detraer distraer extraer retraer sustraer"><h3><a href="65-traer.html">traer</a> <span class="model-number">RAE #65</span></h3><p class="mini-signature">traig- / traj- / tray-</p><p>traer · abstraer · atraer · contraer · detraer · distraer…</p></article><article class="family-card" data-family-card data-search="valer valg- · valdr- valg- / valdr- / val- valer equivaler revaler"><h3><a href="66-valer.html">valer</a> <span class="model-number">RAE #66</span></h3><p class="mini-signature">valg- / valdr- / val-</p><p>valer · equivaler · revaler</p></article><article class="family-card" data-family-card data-search="venir veng- · vien- · vin- · vendr- · ven veng- / vien- / vin- / vendr- venir advenir convenir devenir intervenir prevenir provenir reconvenir sobrevenir"><h3><a href="67-venir.html">venir</a> <span class="model-number">RAE #67</span></h3><p class="mini-signature">veng- / vien- / vin- / vendr-</p><p>venir · advenir · convenir · devenir · intervenir · prevenir…</p></article><article class="family-card" data-family-card data-search="morir o → ue / u · muerto muer- / mur- / mor- / muerto morir"><h3><a href="75-morir.html">morir</a> <span class="model-number">subfamilia</span></h3><p class="mini-signature">muer- / mur- / mor- / muerto</p><p>morir</p></article><article class="family-card" data-family-card data-search="volver o → ue · vuelto vuelv- / volv- / vuelto volver devolver desenvolver envolver revolver"><h3><a href="76-volver.html">volver</a> <span class="model-number">subfamilia</span></h3><p class="mini-signature">vuelv- / volv- / vuelto</p><p>volver · devolver · desenvolver · envolver · revolver</p></article><article class="family-card" data-family-card data-search="resolver o → ue · resuelto resuelv- / resolv- / resuelto resolver absolver disolver"><h3><a href="77-resolver.html">resolver</a> <span class="model-number">subfamilia</span></h3><p class="mini-signature">resuelv- / resolv- / resuelto</p><p>resolver · absolver · disolver</p></article><article class="family-card" data-family-card data-search="freír e → i · freído / frito frí- / fri- / fre- / frito freír refreír sofreír"><h3><a href="78-freir.html">freír</a> <span class="model-number">subfamilia</span></h3><p class="mini-signature">frí- / fri- / fre- / frito</p><p>freír · refreír · sofreír</p></article><article class="family-card" data-family-card data-search="proveer vocal + y · proveído / provisto prove- / provey- / provisto proveer"><h3><a href="79-proveer.html">proveer</a> <span class="model-number">subfamilia</span></h3><p class="mini-signature">prove- / provey- / provisto</p><p>proveer</p></article><article class="family-card" data-family-card data-search="elegir e → i · elegido / electo elij- / elig- / eleg- / electo elegir reelegir"><h3><a href="80-elegir.html">elegir</a> <span class="model-number">subfamilia</span></h3><p class="mini-signature">elij- / elig- / eleg- / electo</p><p>elegir · reelegir</p></article><article class="family-card" data-family-card data-search="satisfacer satisfag- · satisfic-/satisfiz- · satisfar- satisfag- / satisfic- / satisfiz- / satisfar- satisfacer"><h3><a href="81-satisfacer.html">satisfacer</a> <span class="model-number">subfamilia</span></h3><p class="mini-signature">satisfag- / satisfic- / satisfiz- / satisfar-</p><p>satisfacer</p></article></div></section><section><div class="section-head"><h2>Alternancias vocálicas</h2><p class="formula">12 familias</p></div><div class="family-grid"><article class="family-card" data-family-card data-search="acertar e → ie · presente aciert- / acert- acertar pensar cerrar empezar despertar negar recomendar regar tropezar"><h3><a href="04-acertar.html">acertar</a> <span class="model-number">RAE #4</span></h3><p class="mini-signature">aciert- / acert-</p><p>acertar · pensar · cerrar · empezar · despertar · negar…</p></article><article class="family-card" data-family-card data-search="adquirir i → ie · presente adquier- / adquir- adquirir inquirir"><h3><a href="07-adquirir.html">adquirir</a> <span class="model-number">RAE #7</span></h3><p class="mini-signature">adquier- / adquir-</p><p>adquirir · inquirir</p></article><article class="family-card" data-family-card data-search="ceñir e → i · formas de pretérito ciñ- / ceñ- ceñir constreñir estreñir reñir teñir"><h3><a href="21-ceñir.html">ceñir</a> <span class="model-number">RAE #21</span></h3><p class="mini-signature">ciñ- / ceñ-</p><p>ceñir · constreñir · estreñir · reñir · teñir</p></article><article class="family-card" data-family-card data-search="contar o → ue · presente cuent- / cont- contar acordar almorzar aprobar encontrar mostrar probar recordar rodar soñar volar volcar"><h3><a href="25-contar.html">contar</a> <span class="model-number">RAE #25</span></h3><p class="mini-signature">cuent- / cont-</p><p>contar · acordar · almorzar · aprobar · encontrar · mostrar…</p></article><article class="family-card" data-family-card data-search="discernir e → ie · solo presente disciern- / discern- discernir cernir hendir"><h3><a href="29-discernir.html">discernir</a> <span class="model-number">RAE #29</span></h3><p class="mini-signature">disciern- / discern-</p><p>discernir · cernir · hendir</p></article><article class="family-card" data-family-card data-search="dormir o → ue / u duerm- / durm- / dorm- dormir"><h3><a href="30-dormir.html">dormir</a> <span class="model-number">RAE #30</span></h3><p class="mini-signature">duerm- / durm- / dorm-</p><p>dormir</p></article><article class="family-card" data-family-card data-search="entender e → ie · presente entiend- / entend- entender ascender atender defender descender encender extender perder tender trascender verter"><h3><a href="31-entender.html">entender</a> <span class="model-number">RAE #31</span></h3><p class="mini-signature">entiend- / entend-</p><p>entender · ascender · atender · defender · descender · encender…</p></article><article class="family-card" data-family-card data-search="jugar u → ue · presente jueg- / jug- jugar"><h3><a href="39-jugar.html">jugar</a> <span class="model-number">RAE #39</span></h3><p class="mini-signature">jueg- / jug-</p><p>jugar</p></article><article class="family-card" data-family-card data-search="mover o → ue · presente muev- / mov- mover cocer conmover demoler doler llover moler morder promover torcer"><h3><a href="42-mover.html">mover</a> <span class="model-number">RAE #42</span></h3><p class="mini-signature">muev- / mov-</p><p>mover · cocer · conmover · demoler · doler · llover…</p></article><article class="family-card" data-family-card data-search="oler ol- → huel- huel- / ol- oler"><h3><a href="45-oler.html">oler</a> <span class="model-number">RAE #45</span></h3><p class="mini-signature">huel- / ol-</p><p>oler</p></article><article class="family-card" data-family-card data-search="pedir e → i pid- / ped- pedir competir conseguir corregir despedir impedir medir perseguir regir rendir repetir seguir servir vestir"><h3><a href="46-pedir.html">pedir</a> <span class="model-number">RAE #46</span></h3><p class="mini-signature">pid- / ped-</p><p>pedir · competir · conseguir · corregir · despedir · impedir…</p></article><article class="family-card" data-family-card data-search="sentir e → ie / i sient- / sint- / sent- sentir adherir advertir asentir consentir convertir diferir divertir herir hervir mentir preferir referir sugerir"><h3><a href="60-sentir.html">sentir</a> <span class="model-number">RAE #60</span></h3><p class="mini-signature">sient- / sint- / sent-</p><p>sentir · adherir · advertir · asentir · consentir · convertir…</p></article></div></section><section><div class="section-head"><h2>Presente especial</h2><p class="formula">4 familias</p></div><div class="family-grid"><article class="family-card" data-family-card data-search="agradecer -ecer → -ezc- agradezc- / agradec- agradecer aparecer carecer conocer crecer merecer nacer obedecer ofrecer parecer permanecer pertenecer"><h3><a href="08-agradecer.html">agradecer</a> <span class="model-number">RAE #8</span></h3><p class="mini-signature">agradezc- / agradec-</p><p>agradecer · aparecer · carecer · conocer · crecer · merecer…</p></article><article class="family-card" data-family-card data-search="asir yo/subjuntivo asg- asg- / as- asir desasir"><h3><a href="13-asir.html">asir</a> <span class="model-number">RAE #13</span></h3><p class="mini-signature">asg- / as-</p><p>asir · desasir</p></article><article class="family-card" data-family-card data-search="errar err- → yerr- yerr- / err- errar"><h3><a href="34-errar.html">errar</a> <span class="model-number">RAE #34</span></h3><p class="mini-signature">yerr- / err-</p><p>errar</p></article><article class="family-card" data-family-card data-search="lucir yo/subjuntivo luzc- luzc- / luc- lucir deslucir enlucir relucir traslucir"><h3><a href="41-lucir.html">lucir</a> <span class="model-number">RAE #41</span></h3><p class="mini-signature">luzc- / luc-</p><p>lucir · deslucir · enlucir · relucir · traslucir</p></article></div></section><section><div class="section-head"><h2>Presente y gerundio</h2><p class="formula">3 familias</p></div><div class="family-grid"><article class="family-card" data-family-card data-search="caer caig- · cay- caig- / cay- / ca- caer decaer recaer"><h3><a href="19-caer.html">caer</a> <span class="model-number">RAE #19</span></h3><p class="mini-signature">caig- / cay- / ca-</p><p>caer · decaer · recaer</p></article><article class="family-card" data-family-card data-search="construir -uir → y construy- / constru- construir atribuir concluir constituir destruir diluir disminuir fluir huir incluir instituir obstruir restituir sustituir"><h3><a href="24-construir.html">construir</a> <span class="model-number">RAE #24</span></h3><p class="mini-signature">construy- / constru-</p><p>construir · atribuir · concluir · constituir · destruir · diluir…</p></article><article class="family-card" data-family-card data-search="leer vocal + y le- / ley- leer creer poseer sobreseer"><h3><a href="40-leer.html">leer</a> <span class="model-number">RAE #40</span></h3><p class="mini-signature">le- / ley-</p><p>leer · creer · poseer · sobreseer</p></article></div></section><section><div class="section-head"><h2>Acentuación vocálica</h2><p class="formula">9 familias</p></div><div class="family-grid"><article class="family-card" data-family-card data-search="actuar hiato en -uar actú- / actu- actuar acentuar continuar efectuar evaluar graduar habituar perpetuar puntuar situar"><h3><a href="05-actuar.html">actuar</a> <span class="model-number">RAE #5</span></h3><p class="mini-signature">actú- / actu-</p><p>actuar · acentuar · continuar · efectuar · evaluar · graduar…</p></article><article class="family-card" data-family-card data-search="aislar ai → aí · raíz tónica aísl- / aisl- aislar airar enraizar"><h3><a href="09-aislar.html">aislar</a> <span class="model-number">RAE #9</span></h3><p class="mini-signature">aísl- / aisl-</p><p>aislar · airar · enraizar</p></article><article class="family-card" data-family-card data-search="aunar au → aú · raíz tónica aún- / aun- aunar ahumar aullar aupar maullar"><h3><a href="14-aunar.html">aunar</a> <span class="model-number">RAE #14</span></h3><p class="mini-signature">aún- / aun-</p><p>aunar · ahumar · aullar · aupar · maullar</p></article><article class="family-card" data-family-card data-search="descafeinar ei → eí · raíz tónica descafeín- / descafein- descafeinar cafeinar"><h3><a href="28-descafeinar.html">descafeinar</a> <span class="model-number">RAE #28</span></h3><p class="mini-signature">descafeín- / descafein-</p><p>descafeinar · cafeinar</p></article><article class="family-card" data-family-card data-search="enviar ia → ía · raíz tónica enví- / envi- enviar aliar confiar criar desviar enfriar espiar fiar guiar liar rociar vaciar variar"><h3><a href="32-enviar.html">enviar</a> <span class="model-number">RAE #32</span></h3><p class="mini-signature">enví- / envi-</p><p>enviar · aliar · confiar · criar · desviar · enfriar…</p></article><article class="family-card" data-family-card data-search="prohibir oi → oí · raíz tónica prohíb- / prohib- prohibir cohibir"><h3><a href="51-prohibir.html">prohibir</a> <span class="model-number">RAE #51</span></h3><p class="mini-signature">prohíb- / prohib-</p><p>prohibir · cohibir</p></article><article class="family-card" data-family-card data-search="prohijar oi → oí · raíz tónica prohíj- / prohij- prohijar"><h3><a href="52-prohijar.html">prohijar</a> <span class="model-number">RAE #52</span></h3><p class="mini-signature">prohíj- / prohij-</p><p>prohijar</p></article><article class="family-card" data-family-card data-search="rehusar eu → eú · raíz tónica rehús- / rehus- rehusar reuntar"><h3><a href="55-rehusar.html">rehusar</a> <span class="model-number">RAE #55</span></h3><p class="mini-signature">rehús- / rehus-</p><p>rehusar · reuntar</p></article><article class="family-card" data-family-card data-search="reunir eu → eú · raíz tónica reún- / reun- reunir"><h3><a href="56-reunir.html">reunir</a> <span class="model-number">RAE #56</span></h3><p class="mini-signature">reún- / reun-</p><p>reunir</p></article></div></section><section><div class="section-head"><h2>Pretéritos fuertes</h2><p class="formula">1 familias</p></div><div class="family-grid"><article class="family-card" data-family-card data-search="andar pretérito anduv- anduv- andar desandar"><h3><a href="10-andar.html">andar</a> <span class="model-number">RAE #10</span></h3><p class="mini-signature">anduv-</p><p>andar · desandar</p></article></div></section><section><div class="section-head"><h2>Variantes de paradigma</h2><p class="formula">3 familias</p></div><div class="family-grid"><article class="family-card" data-family-card data-search="pudrir pudr- / podr- pudr- / podr- pudrir podrir"><h3><a href="53-pudrir.html">pudrir</a> <span class="model-number">RAE #53</span></h3><p class="mini-signature">pudr- / podr-</p><p>pudrir · podrir</p></article><article class="family-card" data-family-card data-search="roer roo / roigo / royo ro- / roig- / roy- roer corroer"><h3><a href="57-roer.html">roer</a> <span class="model-number">RAE #57</span></h3><p class="mini-signature">ro- / roig- / roy-</p><p>roer · corroer</p></article><article class="family-card" data-family-card data-search="yacer yazc- / yazg- / yag- yazc- / yazg- / yag- / yac- yacer subyacer"><h3><a href="69-yacer.html">yacer</a> <span class="model-number">RAE #69</span></h3><p class="mini-signature">yazc- / yazg- / yag- / yac-</p><p>yacer · subyacer</p></article></div></section><section><div class="section-head"><h2>Participios irregulares</h2><p class="formula">5 familias</p></div><div class="family-grid"><article class="family-card" data-family-card data-search="abrir participio abierto abr- / abierto abrir entreabrir reabrir"><h3><a href="70-abrir.html">abrir</a> <span class="model-number">participio</span></h3><p class="mini-signature">abr- / abierto</p><p>abrir · entreabrir · reabrir</p></article><article class="family-card" data-family-card data-search="cubrir participio cubierto cubr- / cubierto cubrir descubrir encubrir recubrir redescubrir"><h3><a href="71-cubrir.html">cubrir</a> <span class="model-number">participio</span></h3><p class="mini-signature">cubr- / cubierto</p><p>cubrir · descubrir · encubrir · recubrir · redescubrir</p></article><article class="family-card" data-family-card data-search="escribir participio escrito escrib- / escrito escribir adscribir circunscribir describir inscribir prescribir suscribir transcribir"><h3><a href="72-escribir.html">escribir</a> <span class="model-number">participio</span></h3><p class="mini-signature">escrib- / escrito</p><p>escribir · adscribir · circunscribir · describir · inscribir · prescribir…</p></article><article class="family-card" data-family-card data-search="romper participio roto romp- / roto romper"><h3><a href="73-romper.html">romper</a> <span class="model-number">participio</span></h3><p class="mini-signature">romp- / roto</p><p>romper</p></article><article class="family-card" data-family-card data-search="imprimir participios imprimido / impreso imprim- / imprimido~impreso imprimir"><h3><a href="74-imprimir.html">imprimir</a> <span class="model-number">participio</span></h3><p class="mini-signature">imprim- / imprimido~impreso</p><p>imprimir</p></article></div></section><section><div class="section-head"><h2>Ajustes fonológicos</h2><p class="formula">2 familias</p></div><div class="family-grid"><article class="family-card" data-family-card data-search="mullir pérdida de i tras ll/ñ mull- mullir bullir bruñir engullir escabullir tullir zambullir"><h3><a href="43-mullir.html">mullir</a> <span class="model-number">RAE #43</span></h3><p class="mini-signature">mull-</p><p>mullir · bullir · bruñir · engullir · escabullir · tullir…</p></article><article class="family-card" data-family-card data-search="tañer pérdida de i tras ñ tañ- tañer atañer"><h3><a href="63-taner.html">tañer</a> <span class="model-number">RAE #63</span></h3><p class="mini-signature">tañ-</p><p>tañer · atañer</p></article></div></section>
+    <section><div class="section-head"><h2>Verbos defectivos</h2></div><div class="family-grid"><article class="family-card" data-family-card data-search="defectivos soler balbucir llover nevar acontecer acaecer atañer concernir"><h3><a href="defectivos.html">Formas restringidas</a></h3><p class="mini-signature">— = forma ausente o no usual</p><p>soler · balbucir · meteorológicos · terciopersonales…</p></article></div></section>
+    <section><div class="section-head"><h2>Controles regulares no duplicados</h2></div><p class="control-note">Los modelos académicos 6 adeudar · 11 anunciar · 12 aplaudir · 15 averiguar · 16 bailar · 20 causar · 22 coitar · 47 peinar sirven para fijar silabificación, acento o escritura, pero no contienen una irregularidad morfológica que deba ponerse en rojo. Por eso remiten al <a href="../spanish-conjugation-chart.html">cuadro regular</a> y no generan páginas engañosamente “irregulares”.</p></section>
+    <section class="sources"><h2>Fuentes y criterio</h2><ul class="source-links"><li><a href="https://www.rae.es/buen-uso-español/conjugación-española">RAE/ASALE · modelos e índice</a></li><li><a href="https://www.rae.es/gramática/morfología/verbos-irregulares-ii-verbos-con-alternancia-vocálica">RAE/ASALE · alternancias vocálicas</a></li><li><a href="https://www.rae.es/gramática/morfología/verbos-irregulares-iii-verbos-con-alternancia-consonántica-su-concurrencia-con-las-vocálicas">RAE/ASALE · alternancias consonánticas</a></li><li><a href="https://www.rae.es/gramática/morfología/verbos-irregulares-iv-pretéritos-fuertes-y-participios-irregulares">RAE/ASALE · pretéritos y participios</a></li><li><a href="https://www.rae.es/gramática/morfología/verbos-irregulares-v-verbos-de-conjugación-especial-haber-ser-ir-estar-dar-raíces-verbales-supletivas">RAE/ASALE · paradigmas especiales</a></li><li><a href="https://cvc.cervantes.es/Ensenanza/biblioteca_ele/plan_curricular/niveles/02_gramatica_inventario_a1-a2.htm">Instituto Cervantes · inventario gramatical</a></li></ul></section>
+  </main>
+  <script>
+    const input = document.querySelector('#family-search');
+    const cards = [...document.querySelectorAll('[data-family-card]')];
+    input.addEventListener('input', () => {
+      const query = input.value.trim().toLocaleLowerCase('es');
+      cards.forEach(card => { card.hidden = query && !card.dataset.search.includes(query); });
+      document.querySelectorAll('.family-grid').forEach(grid => {
+        const section = grid.closest('section');
+        section.hidden = [...grid.children].every(card => card.hidden);
+      });
+    });
+  </script>
+
+</body>
+</html>
