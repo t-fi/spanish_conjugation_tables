@@ -1285,12 +1285,15 @@ CUSTOM_CSS = r"""
     .is-orthographic { background: #fff2cf !important; box-shadow: inset 0 0 0 1.5px #9b6b12; }
     .form-variant { display: inline-block; padding: 0.05rem 0.18rem; border-radius: 3px; }
     .variant-sep { color: #778196; font-weight: 500; }
+    /* Contain absolutely positioned accessibility labels in the scroll area. */
+    .table-wrap { position: relative; }
     .indicative-table { min-width: 760px; }
     .subjunctive-table { min-width: 600px; table-layout: fixed; }
-    .compound-table { min-width: 1080px; }
+    /* Full compounds and alternate participles must determine column widths. */
+    .compound-table { min-width: 1080px; table-layout: auto; }
     .command-table { min-width: 310px; }
     .nonfinite-table { min-width: 390px; }
-    .rare-table { min-width: 670px; table-layout: fixed; }
+    .rare-table { min-width: 670px; table-layout: auto; }
     .indicative-table .person, .subjunctive-table .person, .rare-table .person { width: 142px; }
     .indicative-table tbody td, .subjunctive-table tbody td { text-align: left; }
     .stem-key { min-height: 1.55em; overflow-wrap: anywhere; }
